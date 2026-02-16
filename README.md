@@ -1,2 +1,2 @@
-# ipharmegy-academy-pages
-learning portal frontend deployed on Cloudflare Pages.
+iPharmEGY Academy
+Official learning portal frontend.
