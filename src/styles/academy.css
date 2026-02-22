@@ -1,18 +1,88 @@
-﻿/* === iPharmEGY Academy  Professional Academic Template === */
+﻿/* === iPharmEGY Academy | Pro Dark Theme (High Contrast) === */
+
+:root{
+  --bg0:#070A12;
+  --bg1:#0B1020;
+  --bg2:#0A1B2A;
+  --glass: rgba(255,255,255,.07);
+  --glass2: rgba(255,255,255,.10);
+  --stroke: rgba(255,255,255,.14);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+}
+
+html, body{
+  height:100%;
+  background: radial-gradient(1200px 900px at 20% 10%, rgba(180,90,255,.18), transparent 60%),
+              radial-gradient(900px 700px at 85% 30%, rgba(60,220,255,.14), transparent 60%),
+              radial-gradient(1000px 800px at 50% 100%, rgba(60,220,170,.10), transparent 60%),
+              linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg2));
+  color: var(--text);
+}
+
+#root{ min-height:100%; }
+
 .acad{
   min-height:100vh;
-  color: rgba(255,255,255,.92);
+  color: var(--text);
 }
 
 .acadHero{
-  padding: 42px 18px 22px;
+  padding: 18px 16px 10px;
 }
+
+.topBar{
+  max-width: 1100px;
+  margin: 0 auto 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(10,14,28,.62);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.40);
+}
+
+.brandLeft{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandTitle{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+  min-width:0;
+}
+.brandTitle .t1{ font-weight: 900; letter-spacing:.2px; }
+.brandTitle .t2{ font-weight: 700; opacity:.75; font-size: 12px; }
+
+.navBtns{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.navBtn{
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor:pointer;
+}
+.navBtn:active{ transform: scale(.985); filter: brightness(1.06); }
 
 .acadHeroInner{
   max-width: 1100px;
   margin: 0 auto;
   display:flex;
-  gap: 18px;
+  gap: 14px;
   align-items: stretch;
   justify-content: space-between;
 }
@@ -20,25 +90,27 @@
 .acadId{
   flex: 1 1 auto;
   padding: 18px;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid var(--stroke);
   background: rgba(255,255,255,.06);
-  backdrop-filter: blur(10px);
-  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
 }
 
 .acadId h1{
   margin: 0 0 6px;
-  font-size: 30px;
+  font-size: 28px;
   letter-spacing: .2px;
+  text-shadow: 0 8px 24px rgba(0,0,0,.45);
 }
 .acadId h2{
   margin: 0 0 6px;
-  font-size: 16px;
+  font-size: 15px;
   opacity: .92;
 }
 .acadId p{
   margin: 0 0 14px;
-  opacity: .78;
+  opacity: .80;
 }
 
 .acadMeta{
@@ -50,11 +122,10 @@
 .chip{
   padding: 8px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.08);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 12px;
-  letter-spacing: .2px;
 }
 
 .acadProgress{
@@ -62,21 +133,15 @@
   align-items:center;
   gap: 10px;
   padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,.10);
+  border-top: 1px solid rgba(255,255,255,.12);
 }
-.progNum{
-  font-size: 22px;
-  font-weight: 900;
-}
-.progTxt{
-  opacity: .80;
-  font-weight: 700;
-}
+.progNum{ font-size: 22px; font-weight: 900; }
+.progTxt{ opacity: .82; font-weight: 800; }
 .ghostBtn{
   margin-left:auto;
-  border: 1px solid rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.92);
   padding: 8px 12px;
   border-radius: 12px;
   cursor:pointer;
@@ -90,35 +155,37 @@
 }
 .logoCard{
   width:100%;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 20px;
+  border: 1px solid var(--stroke);
   background: rgba(255,255,255,.06);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
 }
 .logoCard img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 16px;
+  padding: 14px;
 }
 
-.acadMain{
-  padding: 10px 18px 40px;
-}
+/* Sections */
+.acadMain{ padding: 10px 16px 46px; }
 
 .acadSection{
   max-width: 1100px;
-  margin: 0 auto 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.05);
-  backdrop-filter: blur(10px);
-  border-radius: 22px;
-  padding: 18px;
+  margin: 0 auto 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,28,.55);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
 }
+
 .secHead{
   display:flex;
   align-items:flex-end;
@@ -127,48 +194,63 @@
   margin-bottom: 14px;
 }
 .secHead h3{ margin:0; font-size: 18px; }
-.secHead p{ margin:0; opacity:.75; font-weight:600; }
+.secHead p{ margin:0; opacity:.78; font-weight:700; }
 
+/* Modules grid */
 .ringGrid{
   display:grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 
 .ringBtn{
-  border: 0;
+  border: 1px solid rgba(255,255,255,.18);
   cursor:pointer;
-  border-radius: 999px;
-  height: 142px;
-  padding: 12px;
-  text-align:center;
+  border-radius: 22px;
+  min-height: 120px;
+  padding: 14px 12px;
+  text-align:left;
   color: rgba(255,255,255,.94);
-  border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   position:relative;
   transition: transform .12s ease, filter .12s ease;
+  box-shadow: 0 16px 40px rgba(0,0,0,.32);
+  overflow:hidden;
 }
-.ringBtn:active{ transform: scale(.985); filter: brightness(1.06); }
+.ringBtn:before{
+  content:"";
+  position:absolute;
+  inset:-40px -60px auto auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  filter: blur(0px);
+  opacity: .95;
+  transform: rotate(15deg);
+}
+.ringBtn:active{ transform: scale(.985); filter: brightness(1.08); }
 
 .ringTitle{
-  font-weight: 900;
-  font-size: 18px;
-  letter-spacing: .4px;
-  margin-bottom: 6px;
+  font-weight: 950;
+  font-size: 20px;
+  letter-spacing: .3px;
+  margin: 0 0 6px;
+  text-shadow: 0 10px 26px rgba(0,0,0,.55);
 }
 .ringDesc{
   font-size: 12px;
-  opacity: .78;
+  opacity: .88;
   line-height: 1.25;
+  text-shadow: 0 10px 26px rgba(0,0,0,.45);
 }
 
-/* five accent styles */
-.ringBtn--1{ background: radial-gradient(circle at 30% 20%, rgba(180,90,255,.35), rgba(255,255,255,.04) 60%); }
-.ringBtn--2{ background: radial-gradient(circle at 30% 20%, rgba(60,220,255,.30), rgba(255,255,255,.04) 60%); }
-.ringBtn--3{ background: radial-gradient(circle at 30% 20%, rgba(60,220,170,.30), rgba(255,255,255,.04) 60%); }
-.ringBtn--4{ background: radial-gradient(circle at 30% 20%, rgba(255,170,60,.28), rgba(255,255,255,.04) 60%); }
-.ringBtn--5{ background: radial-gradient(circle at 30% 20%, rgba(80,140,255,.28), rgba(255,255,255,.04) 60%); }
+/* accent blobs */
+.ringBtn--1:before{ background: radial-gradient(circle at 30% 20%, rgba(180,90,255,.65), transparent 60%); }
+.ringBtn--2:before{ background: radial-gradient(circle at 30% 20%, rgba(60,220,255,.60), transparent 60%); }
+.ringBtn--3:before{ background: radial-gradient(circle at 30% 20%, rgba(60,220,170,.60), transparent 60%); }
+.ringBtn--4:before{ background: radial-gradient(circle at 30% 20%, rgba(255,170,60,.55), transparent 60%); }
+.ringBtn--5:before{ background: radial-gradient(circle at 30% 20%, rgba(80,140,255,.55), transparent 60%); }
 
 .twoCol{
   display:grid;
@@ -177,26 +259,26 @@
 }
 .card{
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.05);
   padding: 14px;
 }
 .card h4{ margin:0 0 10px; font-size: 15px; }
-.card ul{ margin:0; padding-left: 18px; opacity:.85; }
+.card ul{ margin:0; padding-left: 18px; opacity:.88; }
 
 .acadFooter{
   padding: 18px;
   text-align:center;
-  opacity: .72;
+  opacity: .78;
 }
 
 /* responsive */
 @media (max-width: 980px){
   .acadHeroInner{ flex-direction: column; }
   .acadLogo{ width: 100%; flex: 0 0 auto; }
-  .ringGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ringGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px){
-  .ringGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ringBtn{ height: 132px; }
+  .ringBtn{ min-height: 116px; }
+  .ringTitle{ font-size: 18px; }
 }

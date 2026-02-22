@@ -1,5 +1,23 @@
 ﻿import "../styles/academy.css";
 
+function AcademyLogoSvg() {
+  return (
+    <svg width="150" height="44" viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" aria-label="iPharmEGY Academy Logo">
+      <rect x="54" y="28" width="6" height="6" rx="1" fill="#00c853"/>
+      <rect x="46" y="42" width="6" height="6" rx="1" fill="#00c853"/>
+      <rect x="62" y="20" width="6" height="6" rx="1" fill="#00c853"/>
+      <circle cx="100" cy="72" r="40" fill="#1565c0"/>
+      <path d="M72 84 Q100 62 128 76" stroke="#00c853" strokeWidth="4" fill="none"/>
+      <path d="M74 104 Q100 96 126 104" stroke="#D4AF37" strokeWidth="3" fill="none"/>
+      <text x="150" y="86" fontFamily="Segoe UI" fontSize="36" fill="#1e40af">
+        iPharm<tspan fill="#00c853">EGY</tspan>
+      </text>
+      <line x1="120" y1="120" x2="260" y2="120" stroke="#000"/>
+      <text x="170" y="150" fontFamily="Segoe UI" fontSize="22" fill="#0f172a">Academy</text>
+    </svg>
+  );
+}
+
 export default function AcademyHome() {
   const year = new Date().getFullYear();
 
@@ -133,4 +151,5 @@ export default function AcademyHome() {
     </div>
   );
 }
+
 
