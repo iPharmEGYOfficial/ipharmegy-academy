@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Pulmonary Capsule — Asthma & COPD | iPharmEGY Capsules™</title>
+  <style>
+    :root{
+      --ink:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --line:#e2e8f0;
+      --b1:#2563eb; --b2:#06b6d4; --b3:#a855f7; --b4:#16a34a; --b5:#f59e0b; --b6:#ef4444;
+      --shadow:0 10px 30px rgba(15,23,42,.08); --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.75;}
+    .page{width:210mm;min-height:297mm;margin:10mm auto;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow);}
+    @media (max-width:980px){.page{width:96vw;min-height:auto}}
+    .wm{position:absolute;inset:0;pointer-events:none;opacity:.07;background:
+      radial-gradient(circle at 18% 16%, rgba(37,99,235,.7), transparent 55%),
+      radial-gradient(circle at 84% 24%, rgba(168,85,247,.65), transparent 55%),
+      radial-gradient(circle at 45% 86%, rgba(6,182,212,.65), transparent 60%);
+      filter:saturate(1.15);
+    }
+    .wm-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);
+      font-weight:900;font-size:54px;letter-spacing:1px;color:#0b1220;opacity:.09;white-space:nowrap;}
+    .topbar{padding:20px 24px;background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(6,182,212,.10), rgba(168,85,247,.10));
+      border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;justify-content:space-between;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg, var(--b1), var(--b3));
+      color:#fff;font-weight:900;display:grid;place-items:center;box-shadow:0 8px 18px rgba(37,99,235,.22);flex:0 0 auto;}
+    .brand h1{margin:0;font-size:18px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .brand small{display:block;color:var(--muted);font-weight:650;margin-top:2px;}
+    .meta{text-align:left;direction:ltr;color:var(--muted);font-weight:800;font-size:12px;white-space:nowrap;}
+    .content{padding:22px 24px 78px;position:relative;z-index:1;}
+    .hero{border:1px solid var(--line);border-radius:18px;padding:16px;background:linear-gradient(135deg, rgba(37,99,235,.08), rgba(6,182,212,.06), rgba(168,85,247,.06));margin-bottom:14px;}
+    .hero h2{margin:0 0 6px 0;font-size:24px;}
+    .hero p{margin:0;color:var(--muted);font-weight:650;}
+    .chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-weight:850;font-size:12px;border:1px solid var(--line);background:#fff;}
+    .chip.info{border-color:rgba(37,99,235,.25);background:rgba(37,99,235,.08);}
+    .chip.ok{border-color:rgba(22,163,74,.25);background:rgba(22,163,74,.08);}
+    .chip.warn{border-color:rgba(245,158,11,.25);background:rgba(245,158,11,.10);}
+    .chip.danger{border-color:rgba(239,68,68,.25);background:rgba(239,68,68,.10);}
+    .grid{display:grid;gap:12px;}
+    .grid.two{grid-template-columns:1fr 1fr;}
+    @media (max-width:980px){.grid.two{grid-template-columns:1fr;}}
+    .card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;}
+    .card h3{margin:0 0 8px 0;font-size:16px;display:flex;align-items:center;gap:10px;}
+    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;flex:0 0 auto;background:linear-gradient(135deg, var(--b1), var(--b2));}
+    .i2{background:linear-gradient(135deg, var(--b4), var(--b2));}
+    .i3{background:linear-gradient(135deg, var(--b5), var(--b3));}
+    .i4{background:linear-gradient(135deg, var(--b6), var(--b5));}
+    .i5{background:linear-gradient(135deg, #0ea5e9, #22c55e);}
+    ul{margin:8px 0 0 0;padding:0 18px;}
+    li{margin:6px 0;}
+    .rule{padding:12px 14px;border-radius:16px;border:1px dashed rgba(37,99,235,.35);background:rgba(37,99,235,.06);font-weight:900;margin-top:10px;}
+    .steps{margin-top:10px;display:grid;gap:8px;}
+    .step{border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:linear-gradient(135deg, rgba(15,23,42,.02), rgba(37,99,235,.05));}
+    .step b{color:var(--b1);}
+    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(15,23,42,.12), transparent);margin:14px 0;}
+    table.tbl{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);margin-top:10px;}
+    .tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px;}
+    .tbl th{background:rgba(2,6,23,.03);font-weight:900;}
+    .tbl tr:last-child td{border-bottom:none;}
+    .footer{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);z-index:2;}
+    .sig{font-weight:900;color:var(--ink);}
+    .sig small{display:block;color:var(--muted);font-weight:750;margin-top:2px;}
+    .pageno{font-weight:900;color:var(--muted);}
+    @media print{body{background:#fff}.page{margin:0;border:none;border-radius:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}}
+  </style>
+</head>
+<body>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Pu</div>
+      <div>
+        <h1>Pulmonary Capsule — Asthma & COPD</h1>
+        <small>شروحات مبسطة للمذاكرة + الامتحان</small>
+      </div>
+    </div>
+    <div class="meta">
+      iPharmEGY Academy<br/>
+      Series: Capsules™<br/>
+      Updated: 2026-02-01
+    </div>
+  </header>
+  <div class="content">
+    <div class="hero">
+      <h2>🎯 الهدف</h2>
+      <p>ملخص عملي يثبت التشخيص ويختصر خطة العلاج (Asthma/COPD) ويجهزك لـ MCQ.</p>
+      <div class="chips">
+        <span class="chip info">📌 Spirometry</span><span class="chip info">📌 Asthma control</span><span class="chip info">📌 COPD GOLD</span><span class="chip info">📌 Exacerbations</span>
+      </div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon">🗺️</span> خريطة الكبسولة</h3>
+        <ul><li>Spirometry: FEV1/FVC + reversibility</li>
+<li>Asthma: التحكم (4 أسئلة) + قواعد العلاج</li>
+<li>Action plan: Green/Yellow/Red</li>
+<li>COPD: التشخيص + CAT/mMRC + GOLD A/B/E</li>
+<li>Exacerbations: مبادئ التعامل + الوقاية</li></ul>
+        <div class="rule">قاعدة ذهبية: لو في ربو/Overlap → ما تستخدمش LABA/LAMA لوحدهم بدون ICS.</div>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">⭐</span> مفاتيح الأسئلة</h3>
+        <ul><li>Obstructive: FEV1/FVC ↓ (غالبًا <70%)</li>
+<li>Reversibility: تحسن FEV1 ≥ 12% بعد SABA → يميل للربو</li>
+<li>Asthma control: daytime>2/wk / night waking / SABA>2/wk / activity limit</li>
+<li>COPD GOLD B: LABA+LAMA</li>
+<li>GOLD E: ≥2 exacerbations أو ≥1 hospitalization</li>
+<li>Vaccines + smoking cessation = أهم وقاية</li></ul>
+        <div class="steps">
+          <div class="step">✅ <b>تلميح:</b> لو السؤال عن “تشخيص” → spirometry أولًا. لو “خطة” → severity/control.</div>
+          <div class="step">✅ <b>تلميح:</b> في COPD: فرّق بين dyspnea problem vs exacerbation problem عشان تختار escalation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 1 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🫁</div>
+      <div>
+        <h1>Spirometry + Asthma basics</h1>
+        <small>افهمها مرة وخلصنا</small>
+      </div>
+    </div>
+    <div class="meta">Module: Pulmonary Capsule — Asthma & COPD</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i2">✅</span> نقاط لازم تتحفظ</h3>
+        <ul><li>FEV1: حجم الزفير في أول ثانية.</li>
+<li>FVC: أكبر كمية هوا بعد شهيق عميق.</li>
+<li>Obstructive: FEV1/FVC بتقل (قاعدة عامة <70%).</li>
+<li>Reversibility: زيادة FEV1 ≥ 12% بعد موسّع → يميل للربو.</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i4">⚠️</span> تحذيرات مهمة</h3>
+        <ul><li>الإكثار من SABA علامة خطر (تحكم ضعيف) مش حل.</li>
+<li>لو ربو موجود: ❌ ممنوع LABA monotherapy.</li>
+<li>راجع تقنية الاستنشاق… كثير من الفشل سببه التقنية.</li></ul>
+        <div class="rule">مختصر جدًا: “الربو = انسداد متغير قابل للتحسن… COPD = انسداد مزمن.”</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon">🧾</span> خطوات عملية (Algorithm)</h3>
+      <div class="steps"><div class="step"><b>Step 1:</b> حدد هل في انسداد: FEV1/FVC ↓؟</div>
+<div class="step"><b>Step 2:</b> اختبر التحسن بعد موسّع: Reversible؟</div>
+<div class="step"><b>Step 3:</b> قيّم التحكم (4 أسئلة) وحدد الخطوة العلاجية.</div>
+<div class="step"><b>Step 4:</b> ركز على الالتزام + التقنية + تجنب المحفزات.</div></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 2 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📌</div>
+      <div>
+        <h1>COPD (GOLD) + Exacerbations</h1>
+        <small>خطوات اختيار العلاج</small>
+      </div>
+    </div>
+    <div class="meta">Module: Pulmonary Capsule — Asthma & COPD</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i5">📌</span> ملخص سريع</h3>
+        <ul><li>اشك في COPD: >40 سنة + ضيق نفس تدريجي + تاريخ تدخين/تعرض.</li>
+<li>قياس الأعراض: CAT أو mMRC.</li>
+<li>GOLD A: bronchodilator | GOLD B: LABA+LAMA | GOLD E: LABA+LAMA ± ICS حسب eos/risk.</li>
+<li>التفاقم: الوقاية أهم (تطعيمات + إيقاف التدخين + تأهيل).</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">🧠</span> أسئلة شائعة (FAQ)</h3>
+        <ul><li><b>متى أضيف ICS في COPD؟</b> — لما التفاقم هو المشكلة ومع eos أعلى/دلائل مناسبة.</li><li><b>Overlap ربو+COPD؟</b> — تعامل كأن فيه ربو: ICS أساسي.</li><li><b>ليه LABA+LAMA أول اختيار في B؟</b> — أعراض عالية → مزدوج يعطي تحسن أفضل.</li></ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon i2">🧯</span> مواقف حرجة / Red flags</h3>
+      <ul><li>ضيق نفس شديد/زرقة/تشوش: طوارئ.</li>
+<li>تفاقم شديد مع نقص أكسجة: أكسجين + موسعات + كورس كورتيزون حسب البروتوكول.</li>
+<li>عدوى مشتبه بها + بلغم صديدي/حمى: تقييم طبي وقد يلزم مضاد.</li></ul>
+      <div class="rule">لو ظهر خطر واضح → علامات فشل تنفسي/تدهور سريع → طوارئ فورًا.</div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 3 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📚</div>
+      <div>
+        <h1>الخلاصة + جدول المصطلحات</h1>
+        <small>Quick Review (قبل الامتحان)</small>
+      </div>
+    </div>
+    <div class="meta">Series: Capsules™</div>
+  </header>
+  <div class="content">
+    <div class="card">
+      <h3><span class="icon i3">⚡</span> ورقة واحدة (احفظها)</h3>
+      <div class="steps"><div class="step">1) <b>Obstructive</b> — FEV1/FVC ↓ (≈ <70%)</div>
+<div class="step">2) <b>Asthma rule</b> — لا LABA/LAMA بدون ICS</div>
+<div class="step">3) <b>GOLD B</b> — LABA + LAMA</div>
+<div class="step">4) <b>GOLD E</b> — Exacerbations كثيرة/دخول مستشفى</div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon">📒</span> جدول المصطلحات (EN / AR / شرح مبسط)</h3>
+      <table class="tbl">
+        <thead><tr><th style="width:28%">English</th><th style="width:28%">العربي</th><th>شرح مبسط</th></tr></thead>
+        <tbody>
+          <tr><td>Spirometry</td><td>قياس وظائف التنفس</td><td>اختبار حجم/سرعة الهواء.</td></tr>
+<tr><td>FEV1</td><td>زفير أول ثانية</td><td>مؤشر على شدة الانسداد.</td></tr>
+<tr><td>FVC</td><td>السعة الحيوية</td><td>إجمالي الهواء الخارج.</td></tr>
+<tr><td>ICS</td><td>كورتيزون مستنشق</td><td>مضاد التهاب أساسي للربو.</td></tr>
+<tr><td>LABA/LAMA</td><td>موسعات طويلة</td><td>أساس COPD؛ مع ربو لازم ICS.</td></tr>
+<tr><td>CAT</td><td>تقييم COPD</td><td>مقياس تأثير الأعراض على الحياة.</td></tr>
+<tr><td>Exacerbation</td><td>تفاقم</td><td>زيادة مفاجئة في الأعراض تحتاج علاج إضافي.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon i4">✅</span> ملحوظة استخدام</h3>
+      <p style="margin:0;color:var(--muted);font-weight:650">
+        هذه <b>ملاحظات مذاكرة شخصية</b> (Personal Study Notes). ليست لإعادة نشر محتوى الكورس كما هو.
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 4 / 4</div>
+  </footer>
+</section>
+
+</body>
+</html>

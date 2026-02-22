@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capsule #06 — Neurology (iPharmEGY Academy)</title>
+<style>
+  :root {
+    --bg1:#f5f8ff;
+    --ink:#0d1b2a;
+    --muted:#516274;
+    --card:#ffffffcc;
+    --stroke:#dbe6ff;
+    --brand1:#6D5EF3;
+    --brand2:#00B3B3;
+    --shadow: 0 12px 30px rgba(13,27,42,.10);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", "Tahoma", Arial, sans-serif;
+    background: radial-gradient(1200px 700px at 85% -10%, rgba(109,94,243,.14), transparent 60%),
+                radial-gradient(900px 600px at 10% 20%, rgba(0,179,179,.10), transparent 55%),
+                linear-gradient(180deg, #fbfcff, var(--bg1));
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+  .toolbar {
+    position: sticky; top:0; z-index:50;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.75);
+    border-bottom:1px solid rgba(219,230,255,.7);
+    padding:10px 14px;
+    display:flex; gap:10px; align-items:center; justify-content:space-between;
+  }
+  .brand {
+    display:flex; align-items:center; gap:10px;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .brand small{color:var(--muted); font-weight:700}
+  .btn {
+    border:1px solid rgba(219,230,255,.9);
+    background: linear-gradient(135deg, rgba(109,94,243,.12), rgba(0,179,179,.10));
+    padding:10px 12px;
+    border-radius:12px;
+    font-weight:800;
+    cursor:pointer;
+  }
+  .wrap { max-width: 980px; margin: 18px auto 80px; padding: 0 14px; }
+  .page {
+    position: relative;
+    margin: 18px auto;
+    border-radius: 18px;
+    border:1px solid rgba(219,230,255,.85);
+    box-shadow: var(--shadow);
+    background:
+      url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iOTAwIiB2aWV3Qm94PSIwIDAgOTAwIDkwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB4Mj0iMSIgeTE9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNkQ1RUYzIiBzdG9wLW9wYWNpdHk9IjAuMTIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDBCM0IzIiBzdG9wLW9wYWNpdHk9IjAuMTAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIi8+CiAgPGcgZmlsbD0iIzBiMmIzYSIgZmlsbC1vcGFjaXR5PSIwLjA2IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPgogICAgPHRleHQgeD0iNDUwIiB5PSI0MjAiIGZvbnQtc2l6ZT0iNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmlQaGFybUVHWSBBY2FkZW15PC90ZXh0PgogICAgPHRleHQgeD0iNDUwIiB5PSI1MDAiIGZvbnQtc2l6ZT0iNDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNhcHN1bGVz4oSiPC90ZXh0PgogIDwvZz4KPC9zdmc+") center/cover no-repeat,
+      rgba(255,255,255,.85);
+    overflow:hidden;
+  }
+  .header {
+    padding: 18px 18px 16px;
+    background: linear-gradient(135deg, rgba(109,94,243,.18), rgba(0,179,179,.12));
+    border-bottom: 1px solid rgba(219,230,255,.7);
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items:center;
+  }
+  .h-title h1 {
+    margin:0;
+    font-size: 22px;
+    line-height:1.25;
+    letter-spacing: .2px;
+  }
+  .h-title .sub {
+    margin-top:6px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .meta {
+    display:flex; flex-direction:column; gap:6px; align-items:flex-start;
+    font-weight:800;
+    color: var(--muted);
+  }
+  .badge {
+    width:52px; height:52px; border-radius:16px;
+    display:grid; place-items:center;
+    color:white; font-weight:900;
+    background: linear-gradient(135deg, var(--brand1), var(--brand2));
+    box-shadow: 0 10px 20px rgba(109,94,243,.22);
+    margin-inline-start:auto;
+  }
+  .content {
+    padding: 16px 16px 10px;
+  }
+  .card {
+    background: var(--card);
+    border:1px solid rgba(219,230,255,.85);
+    border-radius: 18px;
+    padding: 14px 14px;
+    margin: 12px 0;
+  }
+  .card-h {
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 8px;
+  }
+  .icon {
+    width: 38px; height: 38px; border-radius: 12px;
+    display:grid; place-items:center;
+    background: rgba(109,94,243,.12);
+    border:1px solid rgba(219,230,255,.9);
+  }
+  h2 {
+    margin:0;
+    font-size: 18px;
+    letter-spacing:.2px;
+  }
+  p { margin: 8px 0; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+  .chip {
+    border:1px solid rgba(219,230,255,.95);
+    background: rgba(255,255,255,.7);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight:800;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .note {
+    margin-top:10px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border:1px dashed rgba(109,94,243,.35);
+    background: rgba(109,94,243,.08);
+    color: var(--ink);
+    font-weight:700;
+  }
+  .footer {
+    padding: 10px 16px 14px;
+    display:flex; justify-content:space-between; align-items:center;
+    color: rgba(81,98,116,.95);
+    font-weight:800;
+    border-top: 1px solid rgba(219,230,255,.7);
+    background: rgba(255,255,255,.55);
+  }
+  .sig {
+    display:flex; gap:10px; align-items:center;
+  }
+  .sig b { color: var(--ink); }
+  .page-no { color: var(--muted); }
+  /* Glossary table */
+  .table-wrap { overflow:auto; border-radius: 14px; }
+  table.glossary {
+    width:100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow:hidden;
+    border:1px solid rgba(219,230,255,.9);
+    border-radius: 14px;
+    background: rgba(255,255,255,.75);
+  }
+  .glossary th, .glossary td {
+    padding: 10px 10px;
+    border-bottom:1px solid rgba(219,230,255,.75);
+    vertical-align: top;
+  }
+  .glossary th {
+    background: rgba(0,179,179,.08);
+    font-weight: 900;
+  }
+  .glossary tr:last-child td { border-bottom:0; }
+  /* Print */
+  @media print {
+    .toolbar { display:none; }
+    body { background: white; }
+    .wrap { max-width: none; padding:0; margin:0; }
+    .page { box-shadow:none; border:0; border-radius:0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="brand">
+      <span>iPharmEGY Academy</span>
+      <small>Capsules™ • Capsule #06</small>
+    </div>
+    <button class="btn" onclick="window.print()">🖨️ طباعة PDF</button>
+  </div>
+
+  <div class="wrap">
+    <section class="page" id="p1">
+      <div class="header">
+        <div class="h-title">
+          <h1>Neurology Capsule — Essentials</h1>
+          <div class="sub">كبسولة الأعصاب: تبسيط سريع للمذاكرة + الامتحان</div>
+          <div class="sub">Updated: <span dir="ltr">2026-02-01</span></div>
+        </div>
+        <div class="meta">
+          <div class="badge">Ne</div>
+          <div>Series: Capsules™</div>
+          <div>iPharmEGY Academy</div>
+        </div>
+      </div>
+
+      <div class="content">
+        
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🧠</div>
+        <h2>الهدف</h2>
+      </div>
+      <div class="card-b">
+        <p>تلخيص عملي لأهم محاور الأعصاب في المحاضرتين (Epilepsy/SE/TBI + Stroke/Headache/PD/MS/Neuropathy).</p><p>يركّز على: (إيه يحصل أولاً؟ إيه تختار؟ وإيه تتجنب؟) مع نقاط امتحانية سريعة.</p>
+        
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🗺️</div>
+        <h2>خريطة الكبسولة</h2>
+      </div>
+      <div class="card-b">
+        <p>1) Epilepsy: اختيار الدواء حسب نوع النوبة + تحذيرات سريعة.</p><p>2) Status Epilepticus: خطوات الطوارئ (ABC → سكر → بنزوديازيبين → دواء صيانة).</p><p>3) TBI: أفكار عامة لإدارة الضغط داخل الجمجمة ومتى نقلق.</p><p>4) Ischemic Stroke/TIA: tPA (Alteplase) ومعايير عامة + مضادات صفائح/وقاية ثانوية.</p><p>5) Headache: Migraine vs Tension vs Cluster (علاج حاد + وقائي).</p><p>6) Parkinson: أعراض أساسية + فكرة العلاج (Levodopa وغيره).</p><p>7) MS: هجمة حادة (ستيرويد) + أدوية معدّلة للمرض (DMTs).</p><p>8) Peripheral neuropathy: تفكير سريع في السبب والعلاج العرضي.</p>
+        
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">💊</div>
+        <h2>Epilepsy — الاختيار اللي يمشي مع النوع</h2>
+      </div>
+      <div class="card-b">
+        <p>قاعدة كبسولات™: **حدّد نوع النوبة أولاً** (Generalized vs Focal) ثم اختر دواء مناسب.</p><p>أمثلة شائعة من الجدول بالمحاضرة:</p><p>• **Generalized (Non‑motor):** Valproate / Lamotrigine / Ethosuximide (خاصة absence).</p><p>• **Focal:** Levetiracetam أو Lacosamide أو Carbamazepine أو Zonisamide…</p><p>ملاحظة مهمة: في بعض الحالات أدوية زي Carbamazepine ممكن تسوّء أنواع generalized معينة؛ لذلك النوع يفرق.</p>
+        <div class='chips'><span class='chip'>Valproate</span><span class='chip'>Levetiracetam</span><span class='chip'>Lamotrigine</span><span class='chip'>Ethosuximide</span><span class='chip'>Focal vs Generalized</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🚑</div>
+        <h2>Status Epilepticus (SE) — سيناريو الطوارئ في 60 ثانية</h2>
+      </div>
+      <div class="card-b">
+        <p>تعريف عملي بالمحاضرة: **≥ 5 دقائق نوبة مستمرة** أو نوبتين/أكثر بدون استعادة الوعي.</p><p>الترتيب الذهبي:</p><p>1) **ABC** (Airway/Breathing/Circulation).</p><p>2) **قِس السكر فورًا**؛ لو منخفض: Thiamine 100 mg IV ثم D50W (للبالغ) حسب البروتوكول.</p><p>3) **Benzodiazepine**: Lorazepam IV (المفضل) أو Diazepam أو Midazolam (IM/IN).</p><p>4) بعد البنزوديازيبين لازم **دواء صيانة**: Phenytoin/Fosphenytoin أو بدائل حسب الحالة.</p>
+        <div class='chips'><span class='chip'>ABC</span><span class='chip'>Glucose</span><span class='chip'>Lorazepam</span><span class='chip'>Midazolam</span><span class='chip'>Phenytoin</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🧯</div>
+        <h2>TBI — الفكرة اللي تهمك في الامتحان</h2>
+      </div>
+      <div class="card-b">
+        <p>الهدف: تمنع Secondary brain injury (نقص أكسجين/ضغط/نزف).</p><p>راقب الوعي (GCS) وعلامات ارتفاع ICP. المحاضرة أشارت لاعتبارات عند درجات وعي منخفضة مبكرًا.</p><p>عمليًا: ثبت مجرى الهواء، اضبط الضغط/الأكسجة، وقيّم الحاجة لتدخلات تقلل ICP حسب البروتوكول بالمستشفى.</p>
+        
+        <div class='note'>💡 هذه النقطة هنا كـ«تذكير عملي» لأن تفاصيل بروتوكولات TBI تختلف بين المؤسسات.</div>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🩸</div>
+        <h2>Ischemic Stroke / TIA — أهم نقاط الأدوية</h2>
+      </div>
+      <div class="card-b">
+        <p>أهم اسم: **Alteplase (tPA)** للـ acute ischemic stroke خلال **4.5 ساعات** من بداية الأعراض (حسب المحاضرة).</p><p>جرعة ألتيبليز في المحاضرة: **0.9 mg/kg IV (حد أقصى 90 mg)**؛ 10% bolus ثم الباقي infusion خلال ساعة.</p><p>بعد tPA: مضادات الصفائح تُؤجَّل **24 ساعة**.</p><p>TIA/Secondary prevention (Non‑cardioembolic): Aspirin 81–325 mg/day أو Clopidogrel 75 mg/day أو Aspirin/Dipyridamole. ولـ high‑risk TIA (ABCD2 ≥4): ممكن Dual (Aspirin+Clopidogrel) لمدة 21–90 يوم ثم Monotherapy.</p>
+        <div class='chips'><span class='chip'>Alteplase</span><span class='chip'>4.5 hours</span><span class='chip'>Aspirin</span><span class='chip'>Clopidogrel</span><span class='chip'>ABCD2</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🤕</div>
+        <h2>Headache — فرّق بسرعة ثم عالج صح</h2>
+      </div>
+      <div class="card-b">
+        <p>الجدول بالمحاضرة قسّم: Migraine / Tension / Cluster.</p><p>Migraine (حاد): Acetaminophen أو NSAIDs؛ ولو أقوى: Triptans (مع تحذيرات). خيارات أحدث ذُكرت: gepants/CGRP وغيرها.</p><p>Cluster: **Oxygen** + خيارات حادة مثل Triptans (غير فموي) حسب الحالة.</p><p>تحذير محاضرة مهم: Triptans ممنوعة في CAD/Stroke/Uncontrolled HTN/PVD/ischemic bowel… وأيضًا قيود تداخل مع ergots.</p>
+        <div class='chips'><span class='chip'>Migraine</span><span class='chip'>Cluster</span><span class='chip'>Triptans</span><span class='chip'>NSAIDs</span><span class='chip'>Oxygen</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🧓</div>
+        <h2>Parkinson — الخلاصة اللي تحفظها</h2>
+      </div>
+      <div class="card-b">
+        <p>أعراض كلاسيكية: Tremor + Rigidity + Bradykinesia (بطء الحركة).</p><p>العلاج الأشهر: **Carbidopa/Levodopa**. المحاضرة عرضت حالة على جرعة 25/100 أربع مرات يوميًا مع Trihexyphenidyl.</p><p>قاعدة كبسولات™: لو المشكلة الأساسية بطء/صلابة والتأثير غير كافي → غالبًا تحتاج تعديل جرعة Levodopa أكثر من زيادة anticholinergic (حسب تقييم الطبيب والآثار الجانبية).</p>
+        <div class='chips'><span class='chip'>Levodopa</span><span class='chip'>Carbidopa</span><span class='chip'>Tremor</span><span class='chip'>Rigidity</span><span class='chip'>Bradykinesia</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🧩</div>
+        <h2>Multiple Sclerosis (MS) — هجمة حادة vs علاج طويل</h2>
+      </div>
+      <div class="card-b">
+        <p>MS: Autoimmune demyelination في الـCNS.</p><p>الهجمة الحادة: ستيرويد جرعات عالية (المحاضرة ذكرت Methylpred IV 1 g/day 3–5 أيام أو بدائل مثل Prednisone جرعة عالية).</p><p>Disease‑Modifying Drugs (DMTs) أمثلة من المحاضرة:</p><p>• Injectable: Interferon β‑1a/β‑1b، Glatiramer…</p><p>• Oral: Teriflunomide، Fingolimod…</p><p>• Infusion: Natalizumab (تحذير PML/REMS)، Ocrelizumab (تحذير فحص Hep B)…</p>
+        <div class='chips'><span class='chip'>Methylpred</span><span class='chip'>Interferon</span><span class='chip'>Fingolimod</span><span class='chip'>Natalizumab</span><span class='chip'>Ocrelizumab</span></div>
+        
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-h">
+        <div class="icon">🧬</div>
+        <h2>Peripheral Neuropathy — تفكير «سبب + عرض»</h2>
+      </div>
+      <div class="card-b">
+        <p>ابدأ بسؤالين: السبب (سكر/نقص فيتامين/دواء/ضغط على عصب/عدوى…؟) + نمط الأعراض.</p><p>العلاج غالبًا: علاج السبب + مسكنات عصبية (حسب البروتوكول) + نصائح نمط حياة.</p>
+        
+        <div class='note'>💡 المحاضرة ركّزت على الفهم العملي؛ لذلك هنا نضع إطار تفكير مبسّط.</div>
+      </div>
+    </div>
+    
+
+        <div class="card">
+          <div class="card-h">
+            <div class="icon">🧾</div>
+            <h2>مصطلحات سريعة (EN ↔ AR) + شرح كبسولات™</h2>
+          </div>
+          <div class="table-wrap">
+            <table class="glossary">
+              <thead><tr><th>English</th><th>العربية</th><th>شرح كبسولات™</th></tr></thead>
+              <tbody><tr><td dir='ltr'><b>Status epilepticus</b></td><td><b>حالة صرعية مطوّلة</b></td><td>نوبة ماشية ومش بتقف (≥5 دقايق) أو نوبات ورا بعض من غير وعي.</td></tr>
+<tr><td dir='ltr'><b>tPA (Alteplase)</b></td><td><b>مذيب جلطة</b></td><td>دواء يذيب الجلطة في الجلطة الدماغية… لازم بدري ومع شروط.</td></tr>
+<tr><td dir='ltr'><b>DAPT</b></td><td><b>علاج مزدوج مضاد صفائح</b></td><td>Aspirin + Clopidogrel فترة قصيرة في حالات مختارة.</td></tr>
+<tr><td dir='ltr'><b>Triptans</b></td><td><b>تريبتان</b></td><td>أدوية حادة للميجرين/الكلستر… ممنوعة مع أمراض شرايين/ضغط غير متحكم.</td></tr>
+<tr><td dir='ltr'><b>DMTs (MS)</b></td><td><b>أدوية تعديل مسار المرض</b></td><td>أدوية تقلل نشاط الـMS على المدى الطويل.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="footer">
+        <div class="sig">
+          <span>©</span>
+          <b>iPharmEGY Academy</b>
+          <span style="opacity:.8">— كبسولات™</span>
+        </div>
+        <div class="page-no">Capsule #06</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

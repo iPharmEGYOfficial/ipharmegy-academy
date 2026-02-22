@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Pediatrics Capsule — Essentials | iPharmEGY Capsules™</title>
+  <style>
+    :root{
+      --ink:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --line:#e2e8f0;
+      --b1:#2563eb; --b2:#06b6d4; --b3:#a855f7; --b4:#16a34a; --b5:#f59e0b; --b6:#ef4444;
+      --shadow:0 10px 30px rgba(15,23,42,.08); --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.75;}
+    .page{width:210mm;min-height:297mm;margin:10mm auto;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow);}
+    @media (max-width:980px){.page{width:96vw;min-height:auto}}
+    .wm{position:absolute;inset:0;pointer-events:none;opacity:.07;background:
+      radial-gradient(circle at 18% 16%, rgba(37,99,235,.7), transparent 55%),
+      radial-gradient(circle at 84% 24%, rgba(168,85,247,.65), transparent 55%),
+      radial-gradient(circle at 45% 86%, rgba(6,182,212,.65), transparent 60%);
+      filter:saturate(1.15);
+    }
+    .wm-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);
+      font-weight:900;font-size:54px;letter-spacing:1px;color:#0b1220;opacity:.09;white-space:nowrap;}
+    .topbar{padding:20px 24px;background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(6,182,212,.10), rgba(168,85,247,.10));
+      border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;justify-content:space-between;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg, var(--b1), var(--b3));
+      color:#fff;font-weight:900;display:grid;place-items:center;box-shadow:0 8px 18px rgba(37,99,235,.22);flex:0 0 auto;}
+    .brand h1{margin:0;font-size:18px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .brand small{display:block;color:var(--muted);font-weight:650;margin-top:2px;}
+    .meta{text-align:left;direction:ltr;color:var(--muted);font-weight:800;font-size:12px;white-space:nowrap;}
+    .content{padding:22px 24px 78px;position:relative;z-index:1;}
+    .hero{border:1px solid var(--line);border-radius:18px;padding:16px;background:linear-gradient(135deg, rgba(37,99,235,.08), rgba(6,182,212,.06), rgba(168,85,247,.06));margin-bottom:14px;}
+    .hero h2{margin:0 0 6px 0;font-size:24px;}
+    .hero p{margin:0;color:var(--muted);font-weight:650;}
+    .chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-weight:850;font-size:12px;border:1px solid var(--line);background:#fff;}
+    .chip.info{border-color:rgba(37,99,235,.25);background:rgba(37,99,235,.08);}
+    .chip.ok{border-color:rgba(22,163,74,.25);background:rgba(22,163,74,.08);}
+    .chip.warn{border-color:rgba(245,158,11,.25);background:rgba(245,158,11,.10);}
+    .chip.danger{border-color:rgba(239,68,68,.25);background:rgba(239,68,68,.10);}
+    .grid{display:grid;gap:12px;}
+    .grid.two{grid-template-columns:1fr 1fr;}
+    @media (max-width:980px){.grid.two{grid-template-columns:1fr;}}
+    .card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;}
+    .card h3{margin:0 0 8px 0;font-size:16px;display:flex;align-items:center;gap:10px;}
+    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;flex:0 0 auto;background:linear-gradient(135deg, var(--b1), var(--b2));}
+    .i2{background:linear-gradient(135deg, var(--b4), var(--b2));}
+    .i3{background:linear-gradient(135deg, var(--b5), var(--b3));}
+    .i4{background:linear-gradient(135deg, var(--b6), var(--b5));}
+    .i5{background:linear-gradient(135deg, #0ea5e9, #22c55e);}
+    ul{margin:8px 0 0 0;padding:0 18px;}
+    li{margin:6px 0;}
+    .rule{padding:12px 14px;border-radius:16px;border:1px dashed rgba(37,99,235,.35);background:rgba(37,99,235,.06);font-weight:900;margin-top:10px;}
+    .steps{margin-top:10px;display:grid;gap:8px;}
+    .step{border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:linear-gradient(135deg, rgba(15,23,42,.02), rgba(37,99,235,.05));}
+    .step b{color:var(--b1);}
+    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(15,23,42,.12), transparent);margin:14px 0;}
+    table.tbl{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);margin-top:10px;}
+    .tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px;}
+    .tbl th{background:rgba(2,6,23,.03);font-weight:900;}
+    .tbl tr:last-child td{border-bottom:none;}
+    .footer{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);z-index:2;}
+    .sig{font-weight:900;color:var(--ink);}
+    .sig small{display:block;color:var(--muted);font-weight:750;margin-top:2px;}
+    .pageno{font-weight:900;color:var(--muted);}
+    @media print{body{background:#fff}.page{margin:0;border:none;border-radius:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}}
+  </style>
+</head>
+<body>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Pe</div>
+      <div>
+        <h1>Pediatrics Capsule — Essentials</h1>
+        <small>شروحات مبسطة للمذاكرة + الامتحان</small>
+      </div>
+    </div>
+    <div class="meta">
+      iPharmEGY Academy<br/>
+      Series: Capsules™<br/>
+      Updated: 2026-02-01
+    </div>
+  </header>
+  <div class="content">
+    <div class="hero">
+      <h2>🎯 الهدف</h2>
+      <p>تلخيص سريع: إيه اللي يتحفظ؟ وإيه اللي يتعمل؟ (قرارات علاجية مختصرة).</p>
+      <div class="chips">
+        <span class="chip info">📌 Sepsis & Meningitis</span><span class="chip info">📌 RSV (Bronchiolitis)</span><span class="chip info">📌 Acute Otitis Media</span><span class="chip info">📌 ADHD</span>
+      </div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon">🗺️</span> خريطة الكبسولة</h3>
+        <ul><li>Sepsis/Meningitis: ميكروبات حسب العمر + empiric therapy</li>
+<li>RSV: supportive care + مين يستفيد من الوقاية</li>
+<li>AOM: مين نعالجه فورًا ومين نراقبه 48 ساعة</li>
+<li>ADHD: first‑line + بدائل + آثار جانبية</li>
+<li>ورقة واحدة قبل الامتحان + جدول مصطلحات</li></ul>
+        <div class="rule">قاعدة ذهبية: العمر يحدد الميكروب → يحدد العلاج.</div>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">⭐</span> مفاتيح الأسئلة</h3>
+        <ul><li>Neonate: Ampicillin + Gentamicin (غالبًا)</li>
+<li>Ceftriaxone ممنوع في حديثي الولادة</li>
+<li>RSV غالبًا: supportive only (لا مضاد)</li>
+<li>AOM: severe = treat now / mild = watchful 48h</li>
+<li>ADHD: stimulants هي الخط الأول</li>
+<li>Atomoxetine يحتاج 2–4 أسابيع عشان يبان</li></ul>
+        <div class="steps">
+          <div class="step">✅ <b>تلميح:</b> قبل ما تختار المضاد: حدّد عمر الطفل + شدة الحالة.</div>
+          <div class="step">✅ <b>تلميح:</b> لو سؤال “وقاية” مش “علاج”: دور على Palivizumab في high‑risk infants.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 1 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧪</div>
+      <div>
+        <h1>Sepsis & Meningitis — حسب العمر</h1>
+        <small>أهم جزء في أسئلة الأطفال</small>
+      </div>
+    </div>
+    <div class="meta">Module: Pediatrics Capsule — Essentials</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i2">✅</span> نقاط لازم تتحفظ</h3>
+        <ul><li>أقل من شهر: الأكثر شيوعًا GBS / E. coli / Listeria.</li>
+<li>Empiric: Ampicillin + Gentamicin (أو Ampicillin + Cefotaxime).</li>
+<li>1–3 شهور: فكر في Hib / Pneumococcus / Neisseria.</li>
+<li>أكبر من 3 شهور: Ceftriaxone ± Vancomycin (حسب الشدة وخطر مقاومة).</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i4">⚠️</span> تحذيرات مهمة</h3>
+        <ul><li>❌ Ceftriaxone ممنوع في neonates.</li>
+<li>Red flags للمننجيتس: seizures / altered mental status / bulging fontanelle.</li>
+<li>في الشك القوي: ما تأخرش العلاج بسبب انتظار نتائج.</li></ul>
+        <div class="rule">مصطبة القديمة اتشالت 😄: “العمر” هو مفتاح البروتوكول.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon">🧾</span> خطوات عملية (Algorithm)</h3>
+      <div class="steps"><div class="step"><b>Step 1:</b> حدد العمر (Neonate / 1–3m / >3m).</div>
+<div class="step"><b>Step 2:</b> ابدأ empiric المناسب فورًا لو الحالة سيئة أو high suspicion.</div>
+<div class="step"><b>Step 3:</b> اسحب عينات (cultures) قبل المضاد لو ممكن بدون تأخير.</div>
+<div class="step"><b>Step 4:</b> عدّل العلاج بعد النتائج/الاستجابة.</div></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 2 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧩</div>
+      <div>
+        <h1>RSV + AOM + ADHD — أهم القرارات</h1>
+        <small>مراجعة سريعة بدون حشو</small>
+      </div>
+    </div>
+    <div class="meta">Module: Pediatrics Capsule — Essentials</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i5">📌</span> ملخص سريع</h3>
+        <ul><li>RSV: العلاج داعم (O2 + سوائل + تهوية عند اللزوم).</li>
+<li>Palivizumab: وقائي لبعض high‑risk (مش علاجي).</li>
+<li>AOM: severe (T>39 أو ألم شديد/طويل أو <6 شهور) → علاج فوري.</li>
+<li>AOM mild: watchful waiting 48 ساعة ثم قرار.</li>
+<li>ADHD: stimulants أول اختيار، والبدائل حسب الحالة.</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">🧠</span> أسئلة شائعة (FAQ)</h3>
+        <ul><li><b>RSV يحتاج مضاد؟</b> — غالبًا لا… إلا لو عدوى بكتيرية مؤكدة.</li><li><b>ليه نستنى في AOM؟</b> — عشان حالات كتير تتحسن لوحدها؛ لكن لو severe نعالج فورًا.</li><li><b>Atomoxetine ما اشتغل بعد أسبوع؟</b> — طبيعي… يحتاج 2–4 أسابيع.</li></ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon i2">🧯</span> مواقف حرجة / Red flags</h3>
+      <ul><li>RSV مع نقص أكسجة/جفاف: أدخل دعم أكسجين وسوائل فورًا.</li>
+<li>AOM مع ألم شديد جدًا أو طفل صغير جدًا: لا تنتظر.</li>
+<li>ADHD مع فقدان وزن شديد/ضغط عالي: راجع الجرعة/الدواء.</li></ul>
+      <div class="rule">لو ظهر خطر واضح → تحويل للطوارئ/طبيب فورًا حسب الشدة (خصوصًا ضيق نفس شديد/خمول/تشنجات).</div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 3 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📚</div>
+      <div>
+        <h1>الخلاصة + جدول المصطلحات</h1>
+        <small>Quick Review (قبل الامتحان)</small>
+      </div>
+    </div>
+    <div class="meta">Series: Capsules™</div>
+  </header>
+  <div class="content">
+    <div class="card">
+      <h3><span class="icon i3">⚡</span> ورقة واحدة (احفظها)</h3>
+      <div class="steps"><div class="step">1) <b>Neonate sepsis</b> — Ampicillin + Gentamicin</div>
+<div class="step">2) <b>RSV</b> — Supportive care only</div>
+<div class="step">3) <b>AOM severe</b> — High‑dose Amoxicillin</div>
+<div class="step">4) <b>ADHD</b> — Stimulant = First‑line</div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon">📒</span> جدول المصطلحات (EN / AR / شرح مبسط)</h3>
+      <table class="tbl">
+        <thead><tr><th style="width:28%">English</th><th style="width:28%">العربي</th><th>شرح مبسط</th></tr></thead>
+        <tbody>
+          <tr><td>Empiric therapy</td><td>علاج مبدئي</td><td>علاج قبل النتائج بناءً على الأكثر احتمالًا.</td></tr>
+<tr><td>Neonate</td><td>حديث الولادة</td><td>أقل من 28 يوم.</td></tr>
+<tr><td>Bronchiolitis</td><td>التهاب القصيبات</td><td>غالبًا فيروسي؛ العلاج داعم.</td></tr>
+<tr><td>Watchful waiting</td><td>مراقبة</td><td>نستنى 48 ساعة مع متابعة.</td></tr>
+<tr><td>Stimulants</td><td>منشطات</td><td>الخط الأول في ADHD غالبًا.</td></tr>
+<tr><td>Atomoxetine</td><td>أتوموكسيتين</td><td>بديل غير منشط؛ يحتاج أسابيع.</td></tr>
+<tr><td>Red flags</td><td>علامات خطر</td><td>مؤشرات تستدعي تدخل سريع.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon i4">✅</span> ملحوظة استخدام</h3>
+      <p style="margin:0;color:var(--muted);font-weight:650">
+        هذه <b>ملاحظات مذاكرة شخصية</b> (Personal Study Notes). ليست لإعادة نشر محتوى الكورس كما هو.
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 4 / 4</div>
+  </footer>
+</section>
+
+</body>
+</html>

@@ -4,22 +4,19 @@ export default function AcademyHome() {
   const year = new Date().getFullYear();
 
   const modules = [
-    { key: "intro",   title: "Intro",   desc: "Course map & learning outcomes", href: "/ppt/pharmacotherapy-01-intro.pptx" },
-    { key: "pkpd",    title: "PK/PD",    desc: "Doseresponse & kinetics",       href: "/ppt/pharmacotherapy-02-pkpd.pptx" },
-    { key: "abx",     title: "ABX",     desc: "Antimicrobials essentials",       href: "/ppt/pharmacotherapy-03-abx.pptx" },
-    { key: "cvs",     title: "CVS",     desc: "Hypertension & heart failure",    href: "/ppt/pharmacotherapy-04-cvs.pptx" },
-    { key: "dm",      title: "DM",      desc: "Diabetes therapeutics",           href: "/ppt/pharmacotherapy-05-dm.pptx" },
-    { key: "resp",    title: "Resp",    desc: "Asthma/COPD approach",            href: "/ppt/pharmacotherapy-06-resp.pptx" },
-    { key: "gi",      title: "GI",      desc: "Acid disorders & IBD",            href: "/ppt/pharmacotherapy-07-gi.pptx" },
-    { key: "neuro",   title: "Neuro",   desc: "Pain & neuro therapeutics",       href: "/ppt/pharmacotherapy-08-neuro.pptx" },
-    { key: "renal",   title: "Renal",   desc: "Renal dosing & safety",           href: "/ppt/pharmacotherapy-09-renal.pptx" },
-    { key: "hep",     title: "Hep",     desc: "Hepatic impairment",              href: "/ppt/pharmacotherapy-10-hep.pptx" },
-    { key: "heme",    title: "Heme",    desc: "Anticoagulation basics",          href: "/ppt/pharmacotherapy-11-heme.pptx" },
-    { key: "onc",     title: "Onc",     desc: "Supportive oncology care",        href: "/ppt/pharmacotherapy-12-onc.pptx" },
-    { key: "endo",    title: "Endo",    desc: "Thyroid & adrenal",               href: "/ppt/pharmacotherapy-13-endo.pptx" },
-    { key: "toxico",  title: "Toxic",   desc: "Toxicology & antidotes",          href: "/ppt/pharmacotherapy-14-toxic.pptx" },
-    { key: "cases",   title: "Cases",   desc: "Case-based decisions",            href: "/ppt/pharmacotherapy-15-cases.pptx" },
-  ];
+  { key: "cardio",        title: "Cardio",        desc: "Cardiology",                 href: "/pharmacotherapy/Cardiology.html" },
+  { key: "biostats",      title: "Biostats",      desc: "Biostatistics",              href: "/pharmacotherapy/Biostatistics.html" },
+  { key: "study",         title: "Study",         desc: "Study Design",               href: "/pharmacotherapy/StudyDesign.html" },
+  { key: "immunization",  title: "Immun",         desc: "Immunization",               href: "/pharmacotherapy/Immunization.html" },
+  { key: "infectious",    title: "ID",            desc: "Infectious Diseases",        href: "/pharmacotherapy/InfectiousDiseases.html" },
+  { key: "hiv",           title: "HIV",           desc: "HIV",                        href: "/pharmacotherapy/HIV.html" },
+  { key: "peds",          title: "Peds",          desc: "Pediatrics",                 href: "/pharmacotherapy/Pediatrics.html" },
+  { key: "pulm",          title: "Pulm",          desc: "Pulmonary",                  href: "/pharmacotherapy/Pulmonary.html" },
+  { key: "sexual",        title: "SexHlth",       desc: "Sexual & Reproductive",      href: "/pharmacotherapy/SexualHealth.html" },
+  { key: "onco",          title: "Onco",          desc: "Oncology Supportive Care",   href: "/pharmacotherapy/OncologySupportiveCare.html" },
+  { key: "neuro",         title: "Neuro",         desc: "Neurology",                  href: "/pharmacotherapy/Neurology.html" },
+  { key: "nephro",        title: "Nephro",        desc: "Nephrology",                 href: "/pharmacotherapy/Nephrology.html" },
+];
 
   const openPpt = (href, key) => {
     // Progress tracking (C)
@@ -136,3 +133,4 @@ export default function AcademyHome() {
     </div>
   );
 }
+

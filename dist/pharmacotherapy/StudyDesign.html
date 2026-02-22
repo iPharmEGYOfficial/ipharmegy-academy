@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Study Design Capsule — Core Concepts | iPharmEGY Capsules™</title>
+  <style>
+    :root{
+      --ink:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --line:#e2e8f0;
+      --b1:#2563eb; --b2:#06b6d4; --b3:#a855f7; --b4:#16a34a; --b5:#f59e0b; --b6:#ef4444;
+      --shadow:0 10px 30px rgba(15,23,42,.08); --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.75;}
+    .page{width:210mm;min-height:297mm;margin:10mm auto;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow);}
+    @media (max-width:980px){.page{width:96vw;min-height:auto}}
+    .wm{position:absolute;inset:0;pointer-events:none;opacity:.07;background:
+      radial-gradient(circle at 18% 16%, rgba(37,99,235,.7), transparent 55%),
+      radial-gradient(circle at 84% 24%, rgba(168,85,247,.65), transparent 55%),
+      radial-gradient(circle at 45% 86%, rgba(6,182,212,.65), transparent 60%);
+      filter:saturate(1.15);
+    }
+    .wm-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);
+      font-weight:900;font-size:54px;letter-spacing:1px;color:#0b1220;opacity:.09;white-space:nowrap;}
+    .topbar{padding:20px 24px;background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(6,182,212,.10), rgba(168,85,247,.10));
+      border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;justify-content:space-between;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg, var(--b1), var(--b3));
+      color:#fff;font-weight:900;display:grid;place-items:center;box-shadow:0 8px 18px rgba(37,99,235,.22);flex:0 0 auto;}
+    .brand h1{margin:0;font-size:18px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .brand small{display:block;color:var(--muted);font-weight:650;margin-top:2px;}
+    .meta{text-align:left;direction:ltr;color:var(--muted);font-weight:800;font-size:12px;white-space:nowrap;}
+    .content{padding:22px 24px 78px;position:relative;z-index:1;}
+    .hero{border:1px solid var(--line);border-radius:18px;padding:16px;background:linear-gradient(135deg, rgba(37,99,235,.08), rgba(6,182,212,.06), rgba(168,85,247,.06));margin-bottom:14px;}
+    .hero h2{margin:0 0 6px 0;font-size:24px;}
+    .hero p{margin:0;color:var(--muted);font-weight:650;}
+    .chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-weight:850;font-size:12px;border:1px solid var(--line);background:#fff;}
+    .chip.info{border-color:rgba(37,99,235,.25);background:rgba(37,99,235,.08);}
+    .chip.ok{border-color:rgba(22,163,74,.25);background:rgba(22,163,74,.08);}
+    .chip.warn{border-color:rgba(245,158,11,.25);background:rgba(245,158,11,.10);}
+    .chip.danger{border-color:rgba(239,68,68,.25);background:rgba(239,68,68,.10);}
+    .grid{display:grid;gap:12px;}
+    .grid.two{grid-template-columns:1fr 1fr;}
+    @media (max-width:980px){.grid.two{grid-template-columns:1fr;}}
+    .card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;}
+    .card h3{margin:0 0 8px 0;font-size:16px;display:flex;align-items:center;gap:10px;}
+    .icon{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;flex:0 0 auto;background:linear-gradient(135deg, var(--b1), var(--b2));}
+    .i2{background:linear-gradient(135deg, var(--b4), var(--b2));}
+    .i3{background:linear-gradient(135deg, var(--b5), var(--b3));}
+    .i4{background:linear-gradient(135deg, var(--b6), var(--b5));}
+    .i5{background:linear-gradient(135deg, #0ea5e9, #22c55e);}
+    ul{margin:8px 0 0 0;padding:0 18px;}
+    li{margin:6px 0;}
+    .rule{padding:12px 14px;border-radius:16px;border:1px dashed rgba(37,99,235,.35);background:rgba(37,99,235,.06);font-weight:900;margin-top:10px;}
+    .steps{margin-top:10px;display:grid;gap:8px;}
+    .step{border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:linear-gradient(135deg, rgba(15,23,42,.02), rgba(37,99,235,.05));}
+    .step b{color:var(--b1);}
+    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(15,23,42,.12), transparent);margin:14px 0;}
+    table.tbl{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);margin-top:10px;}
+    .tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px;}
+    .tbl th{background:rgba(2,6,23,.03);font-weight:900;}
+    .tbl tr:last-child td{border-bottom:none;}
+    .footer{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);z-index:2;}
+    .sig{font-weight:900;color:var(--ink);}
+    .sig small{display:block;color:var(--muted);font-weight:750;margin-top:2px;}
+    .pageno{font-weight:900;color:var(--muted);}
+    @media print{body{background:#fff}.page{margin:0;border:none;border-radius:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}}
+  </style>
+</head>
+<body>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SD</div>
+      <div>
+        <h1>Study Design Capsule — Core Concepts</h1>
+        <small>شروحات مبسطة لفهم المنهج بسرعة</small>
+      </div>
+    </div>
+    <div class="meta">
+      iPharmEGY Academy<br/>
+      Series: Capsules™<br/>
+      Updated: 2026-02-01
+    </div>
+  </header>
+  <div class="content">
+    <div class="hero">
+      <h2>🎯 الهدف</h2>
+      <p>تلخيص مفاهيم تصميم الدراسات: تفهم بسرعة وتعرف تميّز نوع الدراسة وتكتشف الأخطاء (bias/confounding).</p>
+      <div class="chips">
+        <span class="chip info">📌 Study types</span><span class="chip info">📌 Bias & Confounding</span><span class="chip info">📌 Validity</span><span class="chip info">📌 Measures & P-values</span>
+      </div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon">🗺️</span> خريطة الكبسولة</h3>
+        <ul><li>Study types: observational vs experimental</li>
+<li>Time direction: prospective vs retrospective</li>
+<li>Validity: internal vs external</li>
+<li>Errors: random error vs systematic error (bias)</li>
+<li>Confounding وكيف نتحكم فيه</li>
+<li>Measures: RR/OR/AR + p-value + CI</li></ul>
+        <div class="rule">قاعدة ذهبية: لو الـ internal validity ضعيفة → النتيجة كلها مش موثوقة حتى لو شكلها قوي.</div>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">⭐</span> مفاتيح الأسئلة</h3>
+        <ul><li>Cohort: exposure→outcome (RR)</li>
+<li>Case‑control: outcome→exposure (OR)</li>
+<li>Cross‑sectional: لقطة واحدة (prevalence)</li>
+<li>Randomization يقلل confounding</li>
+<li>Blinding يقلل measurement bias</li>
+<li>CI لو ما بيعديش 1 في RR/OR غالبًا significant</li></ul>
+        <div class="steps">
+          <div class="step">✅ <b>تلميح:</b> اسأل نفسك دائمًا: (مين؟ فين؟ امتى؟) عشان تميّز نوع الدراسة.</div>
+          <div class="step">✅ <b>تلميح:</b> لو السؤال عن “انتشار” → غالبًا cross‑sectional. لو “سبب” مع متابعة → cohort/RCT.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 1 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📊</div>
+      <div>
+        <h1>أنواع الدراسات — تمييز سريع</h1>
+        <small>أشهر جدول في الامتحان</small>
+      </div>
+    </div>
+    <div class="meta">Module: Study Design Capsule — Core Concepts</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i2">✅</span> نقاط لازم تتحفظ</h3>
+        <ul><li>Observational: cohort / case‑control / cross‑sectional.</li>
+<li>Experimental: RCT (أفضل دليل للسببية).</li>
+<li>Prospective vs retrospective: اتجاه الزمن وجمع البيانات.</li>
+<li>Ecological studies: بيانات على مستوى المجتمع (ممكن ecological fallacy).</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i4">⚠️</span> تحذيرات مهمة</h3>
+        <ul><li>Case‑control لا يعطي RR مباشرة (يعطي OR).</li>
+<li>Cross‑sectional لا يثبت السببية (سبب/نتيجة في نفس الوقت).</li>
+<li>Loss to follow‑up في cohort يسبب bias.</li></ul>
+        <div class="rule">مصطبة‑بدون مصطبة: “اسأل: لقطة ولا متابعة؟ نتيجة ولا تعرض؟”</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon">🧾</span> خطوات عملية (Algorithm)</h3>
+      <div class="steps"><div class="step"><b>Step 1:</b> حدد: Observational ولا Experimental؟</div>
+<div class="step"><b>Step 2:</b> حدد: Exposure first ولا Outcome first؟</div>
+<div class="step"><b>Step 3:</b> حدد: Follow‑up موجود؟ (نعم=cohort/RCT).</div>
+<div class="step"><b>Step 4:</b> اختر المقياس المناسب: RR لـ cohort/RCT، OR لـ case‑control.</div></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 2 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧠</div>
+      <div>
+        <h1>Bias + Confounding + Validity</h1>
+        <small>اللي يبوّظ الدراسات</small>
+      </div>
+    </div>
+    <div class="meta">Module: Study Design Capsule — Core Concepts</div>
+  </header>
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i5">📌</span> ملخص سريع</h3>
+        <ul><li>Random error = صدفة (تقل مع حجم عينة أكبر).</li>
+<li>Bias = خطأ منهجي (selection/recall/measurement…).</li>
+<li>Confounder = عامل ثالث مرتبط بالتعرض والنتيجة ويشوّه العلاقة.</li>
+<li>Internal validity: هل النتيجة بسبب التعرض فعلًا؟</li>
+<li>External validity: هل تنطبق على الواقع/سكان آخرين؟</li></ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon i3">🧠</span> أسئلة شائعة (FAQ)</h3>
+        <ul><li><b>إزاي أقلل confounding؟</b> — Randomization / restriction / matching / stratification / regression.</li><li><b>إزاي أقلل bias؟</b> — تصميم مضبوط + blinding + أدوات قياس موحدة + متابعة كويسة.</li><li><b>p-value معناها إيه؟</b> — احتمال رؤية نفس النتيجة (أو أقوى) لو مفيش فرق حقيقي.</li></ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <h3><span class="icon i2">🧯</span> مواقف حرجة / Red flags</h3>
+      <ul><li>Selection bias: العينة مش ممثلة → النتائج تتشوه.</li>
+<li>Recall bias: حالات بترجع تفتكر أكتر من controls.</li>
+<li>Confounding by indication: العلاج اتاخد بسبب شدة المرض.</li></ul>
+      <div class="rule">لو ظهر خطر واضح → لو bias كبير → أي استنتاج عن السبب/النتيجة يبقى خطر.</div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 3 / 4</div>
+  </footer>
+</section>
+
+<section class="page">
+  <div class="wm"></div><div class="wm-text">iPharmEGY Capsules™</div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📚</div>
+      <div>
+        <h1>الخلاصة + جدول المصطلحات</h1>
+        <small>Quick Review (قبل الامتحان)</small>
+      </div>
+    </div>
+    <div class="meta">Series: Capsules™</div>
+  </header>
+  <div class="content">
+    <div class="card">
+      <h3><span class="icon i3">⚡</span> ورقة واحدة (احفظها)</h3>
+      <div class="steps"><div class="step">1) <b>Cohort</b> — Exposure→Outcome | RR</div>
+<div class="step">2) <b>Case‑control</b> — Outcome→Exposure | OR</div>
+<div class="step">3) <b>RCT</b> — Randomization يقلل confounding</div>
+<div class="step">4) <b>CI</b> — لو RR/OR CI لا يشمل 1 → غالبًا significant</div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon">📒</span> جدول المصطلحات (EN / AR / شرح مبسط)</h3>
+      <table class="tbl">
+        <thead><tr><th style="width:28%">English</th><th style="width:28%">العربي</th><th>شرح مبسط</th></tr></thead>
+        <tbody>
+          <tr><td>Cohort study</td><td>دراسة أترابية</td><td>نبدأ بتعرض ونشوف النتيجة مع الزمن.</td></tr>
+<tr><td>Case-control</td><td>حالات وشواهد</td><td>نبدأ بالنتيجة ونفتش عن التعرض.</td></tr>
+<tr><td>Bias</td><td>انحياز</td><td>خطأ منهجي يميّل النتيجة.</td></tr>
+<tr><td>Confounder</td><td>عامل مُربِك</td><td>عامل ثالث يشوّه العلاقة.</td></tr>
+<tr><td>Internal validity</td><td>صلاحية داخلية</td><td>هل النتيجة بسبب التعرض فعلًا؟</td></tr>
+<tr><td>External validity</td><td>صلاحية خارجية</td><td>هل تنفع على ناس/مكان آخر؟</td></tr>
+<tr><td>Confidence interval</td><td>فاصل ثقة</td><td>مدى عدم اليقين حول التقدير.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon i4">✅</span> ملحوظة استخدام</h3>
+      <p style="margin:0;color:var(--muted);font-weight:650">
+        هذه <b>ملاحظات مذاكرة شخصية</b> (Personal Study Notes). ليست لإعادة نشر محتوى الكورس كما هو.
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules™ — شروحات مبسطة</small></div>
+    <div class="pageno">Page 4 / 4</div>
+  </footer>
+</section>
+
+</body>
+</html>

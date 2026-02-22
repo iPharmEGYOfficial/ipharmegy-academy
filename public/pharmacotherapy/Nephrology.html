@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Nephrology Capsule — Essentials | iPharmEGY Capsules</title>
+
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --line:#e2e8f0;
+
+      /* Brand palette (feel free to change) */
+      --b1:#2563eb; /* blue */
+      --b2:#06b6d4; /* cyan */
+      --b3:#a855f7; /* purple */
+      --b4:#16a34a; /* green */
+      --b5:#f59e0b; /* amber */
+      --b6:#ef4444; /* red */
+
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --r:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height:1.75;
+    }
+
+    /* ====== PAGE (A4) ====== */
+    .page{
+      width:210mm;
+      min-height:297mm;
+      margin:10mm auto;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:var(--shadow);
+    }
+    @media (max-width: 980px){
+      .page{width:96vw; min-height:auto}
+    }
+
+    /* Watermark + soft colorful blobs (iOS-friendly, no complex blend modes) */
+    .wm{
+      position:absolute; inset:0;
+      pointer-events:none;
+      opacity:.07;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(37,99,235,.7), transparent 55%),
+        radial-gradient(circle at 84% 24%, rgba(168,85,247,.65), transparent 55%),
+        radial-gradient(circle at 45% 86%, rgba(6,182,212,.65), transparent 60%);
+      filter:saturate(1.15);
+    }
+    .wm-text{
+      position:absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%) rotate(-18deg);
+      font-weight:900;
+      font-size:54px;
+      letter-spacing:1px;
+      color:#0b1220;
+      opacity:.09;
+      white-space:nowrap;
+    }
+
+    /* ====== TOP BAR ====== */
+    .topbar{
+      padding:20px 24px;
+      background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(6,182,212,.10), rgba(168,85,247,.10));
+      border-bottom:1px solid var(--line);
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+    .logo{
+      width:46px; height:46px;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--b1), var(--b3));
+      color:#fff;
+      font-weight:900;
+      display:grid;
+      place-items:center;
+      box-shadow:0 8px 18px rgba(37,99,235,.22);
+      flex:0 0 auto;
+    }
+    .brand h1{
+      margin:0;
+      font-size:18px;
+      line-height:1.25;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-weight:650;
+      margin-top:2px;
+    }
+    .meta{
+      text-align:left;
+      direction:ltr;
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* ====== CONTENT ====== */
+    .content{
+      padding:22px 24px 78px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:linear-gradient(135deg, rgba(37,99,235,.08), rgba(6,182,212,.06), rgba(168,85,247,.06));
+      margin-bottom:14px;
+    }
+    .hero h2{margin:0 0 6px 0; font-size:24px}
+    .hero p{margin:0; color:var(--muted); font-weight:650}
+
+    .chips{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:850;
+      font-size:12px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .chip.info{border-color:rgba(37,99,235,.25); background:rgba(37,99,235,.08);}
+    .chip.ok{border-color:rgba(22,163,74,.25); background:rgba(22,163,74,.08);}
+    .chip.warn{border-color:rgba(245,158,11,.25); background:rgba(245,158,11,.10);}
+    .chip.danger{border-color:rgba(239,68,68,.25); background:rgba(239,68,68,.10);}
+
+    .grid{display:grid; gap:12px}
+    .grid.two{grid-template-columns:1fr 1fr}
+    @media (max-width: 980px){ .grid.two{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      background:#fff;
+    }
+    .card h3{
+      margin:0 0 8px 0;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .icon{
+      width:34px; height:34px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:18px;
+      font-weight:900;
+      flex:0 0 auto;
+      background:linear-gradient(135deg, var(--b1), var(--b2));
+    }
+    .i2{background:linear-gradient(135deg, var(--b4), var(--b2));}
+    .i3{background:linear-gradient(135deg, var(--b5), var(--b3));}
+    .i4{background:linear-gradient(135deg, var(--b6), var(--b5));}
+    .i5{background:linear-gradient(135deg, #0ea5e9, #22c55e);}
+
+    ul{margin:8px 0 0 0; padding:0 18px}
+    li{margin:6px 0}
+
+    .rule{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px dashed rgba(37,99,235,.35);
+      background:rgba(37,99,235,.06);
+      font-weight:900;
+      margin-top:10px;
+    }
+
+    .steps{margin-top:10px; display:grid; gap:8px}
+    .step{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:10px 12px;
+      background:linear-gradient(135deg, rgba(15,23,42,.02), rgba(37,99,235,.05));
+    }
+    .step b{color:var(--b1)}
+
+    .divider{
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(15,23,42,.12), transparent);
+      margin:14px 0;
+    }
+
+    table.tbl{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--line);
+      margin-top:10px;
+    }
+    .tbl th, .tbl td{
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:13px;
+    }
+    .tbl th{
+      background:rgba(2,6,23,.03);
+      font-weight:900;
+    }
+    .tbl tr:last-child td{border-bottom:none}
+
+    /* ====== FOOTER (signature on every page) ====== */
+    .footer{
+      position:absolute;
+      bottom:0; left:0; right:0;
+      padding:14px 18px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+      z-index:2;
+    }
+    .sig{font-weight:900; color:var(--ink)}
+    .sig small{display:block; color:var(--muted); font-weight:750; margin-top:2px}
+    .pageno{font-weight:900; color:var(--muted)}
+
+    /* ====== PRINT ====== */
+    @media print{
+      body{background:#fff}
+      .page{margin:0; border:none; border-radius:0; box-shadow:none; page-break-after:always;}
+      .page:last-child{page-break-after:auto;}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ======================================================
+  HOW TO USE THIS TEMPLATE (edit placeholders):
+  - Nephrology Capsule — Essentials       e.g. "Pulmonary Capsule — Asthma & COPD"
+  - كبسولة الكُلى: شروحات بسيطة من iPharmEGY كبسولات™ للمذاكرة + الامتحان    e.g. "شرح مبسط للمذاكرة + الامتحان"
+  - <span class="chip">AKI</span>
+<span class="chip">Nephrotoxins</span>
+<span class="chip">Dose adjustment</span>
+<span class="chip">Dialysis (AEIOU)</span>
+<span class="chip">CKD complications</span>         list of chips (keep as-is and edit text)
+  - Page N / Total: replace in footer e.g. Page 1 / 6
+  - Replace "iPharmEGY Capsules" label if you want different series name.
+====================================================== -->
+
+<!-- ===== PAGE 1: COVER ===== -->
+<section class="page">
+  <div class="wm"></div>
+  <div class="wm-text">iPharmEGY Capsules™</div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Ne</div>
+      <div>
+        <h1>Nephrology Capsule — Essentials</h1>
+        <small>كبسولة الكُلى: شروحات بسيطة من iPharmEGY كبسولات™ للمذاكرة + الامتحان</small>
+      </div>
+    </div>
+    <div class="meta">
+      iPharmEGY Academy<br/>
+      Series: Capsules™<br/>Capsule #07<br/>
+      Updated: 2026-02-01
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="hero">
+      <h2>🎯 الهدف</h2>
+      <p>تلخيص عملي سريع لأساسيات أمراض الكُلى: كيف تميّز AKI من CKD؟ إزاي تمنع تدهور الكِلى؟ ومتى نحتاج غسيل/تعويض كلوي؟</p>
+      <div class="chips">
+        <span class="chip info">📌 Acute Kidney Injury (AKI)</span>
+        <span class="chip info">📌 Drug‑Induced Kidney Injury</span>
+        <span class="chip info">📌 CKD + Complications</span>
+        <span class="chip info">📌 Renal Replacement Therapy</span>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon">🗺️</span> خريطة الكبسولة</h3>
+        <ul>
+          <li>AKI: قسّم السبب (Pre‑renal / Intrinsic / Post‑renal) + اتصرف بسرعة.</li>
+          <li>أوقف الأدوية المؤذية للكِلى وراجع الجرعات حسب eGFR/CrCl.</li>
+          <li>AEIOU = مؤشرات الغسيل العاجلة (Acidosis, Electrolytes, Intoxication, Overload, Uremia).</li>
+          <li>في CKD ركّز على: الضغط/السكر + البروتين في البول + مضاعفات (أنيميا/عظام).</li>
+        </ul>
+        <div class="rule">قاعدة ذهبية: القاعدة الذهبية: **Stop the cause + Support the kidney + Adjust the drugs**.</div>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon i3">⭐</span> مفاتيح الأسئلة</h3>
+        <ul>
+          <li>AKI: فرق Pre‑renal vs ATN (FeNa/urine Na ممكن تساعد لكن راجع الأدوية والمدرات).</li>
+          <li>AIN triad (حمى/طفح/eosinophilia) مش لازم تظهر… أهم شيء: تاريخ دواء جديد.</li>
+          <li>CKD staging: اعرف حدود eGFR الأساسية + معنى albuminuria.</li>
+          <li>AEIOU = حفظ مضمون في الامتحان.</li>
+        </ul>
+        <div class="steps">
+          <div class="step">✅ <b>تلميح:</b> 🧷 Tip: أي مريض CKD + عدوى/قيء/إسهال = قابل يدخل AKI بسهولة → راقب وقلل سموم الكِلى.</div>
+          <div class="step">✅ <b>تلميح:</b> 🧷 Tip: في U/A: casts تساعدك تفرق (muddy brown = ATN، WBC casts = AIN/pyelo، RBC casts = GN).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules — شروحات مبسطة</small></div>
+    <div class="pageno">Page 1 / 4</div>
+  </footer>
+</section>
+
+<!-- ===== PAGE 2: SECTION A ===== -->
+<section class="page">
+  <div class="wm"></div>
+  <div class="wm-text">iPharmEGY Capsules™</div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧩</div>
+      <div>
+        <h1>AKI بسرعة… من أول دقيقة</h1>
+        <small>تعريف + تقسيم السبب + خطة التعامل</small>
+      </div>
+    </div>
+    <div class="meta">Module: Nephrology</div>
+  </header>
+
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i2">✅</span> نقاط لازم تتحفظ</h3>
+        <ul>
+          <li>مؤشرات الغسيل AEIOU: حماض شديد، K⁺ عالي مقاوم، تسمم قابل للغسيل، وذمة رئة، يوريميا (التهاب تامور/اعتلال دماغ).</li>
+          <li>Dose adjustment فورًا: كثير من الأدوية تحتاج تقليل جرعة/زيادة الفاصل الزمني.</li>
+          <li>راقب: Na/K/HCO₃/Cr يوميًا في الحالات غير المستقرة.</li>
+          <li>تجنب: NSAIDs قدر الإمكان — وخلي بالك من ACEi/ARB في تضيق شرايين الكِلى أو جفاف.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon i4">⚠️</span> أخطاء شائعة / تحذيرات</h3>
+        <ul>
+          <li>لا تتأخر في استبعاد الانسداد (Post‑renal) خصوصًا في كبار السن/احتباس بول.</li>
+          <li>ارتفاع K⁺ أو حماض شديد = طوارئ حتى لو المريض “شكله كويس”.</li>
+          <li>الـ contrast + NSAIDs + dehydration = خلطة خطرة جدًا للكِلى.</li>
+        </ul>
+        <div class="rule">مصطبة‑بدون مصطبة 😄: قاعدة سريعة: **السبب قبل العلاج** — لكن لو طوارئ (K⁺/حماض/وذمة رئة) عالج فورًا.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card">
+      <h3><span class="icon">🧾</span> خطوات عملية (Algorithm)</h3>
+      <div class="steps">
+        <div class="step"><b>Step 1:</b> اسأل: creatinine ↑ ولا urine output ↓؟ وامتى بدأت؟ (ساعات/أيام = AKI غالبًا).</div>
+        <div class="step"><b>Step 2:</b> قسّم السبب: **Pre‑renal** (جفاف/نزيف/قصور قلب) — **Intrinsic** (ATN/AIN/GN) — **Post‑renal** (انسداد).</div>
+        <div class="step"><b>Step 3:</b> تصرف: سوائل لو نقص حجم + وقف مدرات/ACEi/NSAIDs مؤقتًا حسب الحالة + راقب I/O والوزن والضغط.</div>
+        <div class="step"><b>Step 4:</b> اطلب فحوصات ذكية: U/A + electrolytes + ultrasound لو شك انسداد + راجع الأدوية آخر 7–14 يوم.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules — شروحات مبسطة</small></div>
+    <div class="pageno">Page 2 / 4</div>
+  </footer>
+</section>
+
+<!-- ===== PAGE 3: SECTION B ===== -->
+<section class="page">
+  <div class="wm"></div>
+  <div class="wm-text">iPharmEGY Capsules™</div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧠</div>
+      <div>
+        <h1>CKD + الجرعات + المضاعفات</h1>
+        <small>كيف تثبت الكِلى… وتتعامل مع الأنيميا والعظام</small>
+      </div>
+    </div>
+    <div class="meta">Module: Nephrology</div>
+  </header>
+
+  <div class="content">
+    <div class="grid two">
+      <div class="card">
+        <h3><span class="icon i5">📌</span> ملخص سريع</h3>
+        <ul>
+          <li>تعريف CKD: اضطراب > 3 شهور (eGFR < 60 أو ألبومين/دم في البول أو تغيّرات بالتصوير).</li>
+          <li>إبطاء التدهور: **ضغط** (غالبًا هدف <130/80 حسب الإرشادات والحالة) + **ACEi/ARB** لو في بروتين/ألبومين بالبول + ضبط السكر + تقليل الملح.</li>
+          <li>الأنيميا في CKD: نقص EPO + نقص حديد. ابدأ بتقييم Ferritin/TSAT ثم iron، وبعدها ESA عند الحاجة مع متابعة Hb.</li>
+          <li>CKD‑MBD (العظام): فوسفات ↑ + فيتامين D ↓ + PTH ↑ → قلل الفوسفات الغذائي + phosphate binders + vitamin D/calcimimetic حسب الحالة.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon i3">🧠</span> أسئلة شائعة (FAQ)</h3>
+        <ul>
+          <li><b>سؤال: مريض على NSAID وجاله creatinine ↑ بعد جفاف… أول قرار؟</b> — ملخص 30 ثانية: AKI = سبب ثلاثي + وقف السموم + راقب + AEIOU.</li>
+          <li><b>سؤال: مريض CKD ومعاه K⁺=6.5 مع ECG changes… تعمل إيه؟</b> — CKD = ثبات طويل + ركّز على الضغط/السكر/البروتين بالبول.</li>
+          <li><b>سؤال: إزاي تفرّق ATN عن Pre‑renal من التحاليل؟</b> — الجرعات = أمان المريض… أي وصفة بدون تعديل قد تعمل تسمم.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card">
+      <h3><span class="icon i2">🧯</span> الحالات الحادة / الطوارئ (إن وجدت)</h3>
+      <ul>
+        <li>**Pre‑renal**: جفاف/نزيف/قصور قلب → fluids أو تحسين الضخ.</li>
+        <li>**Intrinsic (ATN)**: صدمة/Sepsis/أمينوجلايكوسايد/كونتراست → دعم + تجنب سموم الكِلى.</li>
+        <li>**Post‑renal**: حصوة/تضخم بروستاتا → فك الانسداد (قسطرة/جراحة).</li>
+      </ul>
+      <div class="rule">لو في خطر واضح → Red flag: **Hyperkalemia + ECG changes** أو **pulmonary edema** = طوارئ… عالج فورًا وقيّم الغسيل.</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules — شروحات مبسطة</small></div>
+    <div class="pageno">Page 3 / 4</div>
+  </footer>
+</section>
+
+<!-- ===== PAGE 4: QUICK ONE-PAGE + GLOSSARY ===== -->
+<section class="page">
+  <div class="wm"></div>
+  <div class="wm-text">iPharmEGY Capsules™</div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📚</div>
+      <div>
+        <h1>الخلاصة + جدول المصطلحات</h1>
+        <small>Quick Review (قبل الامتحان)</small>
+      </div>
+    </div>
+    <div class="meta">Series: Capsules</div>
+  </header>
+
+  <div class="content">
+    <div class="card">
+      <h3><span class="icon i3">⚡</span> ورقة واحدة (احفظها)</h3>
+      <div class="steps">
+        <div class="step">1) <b>Drug‑Induced Kidney Injury</b> — أمثلة سريعة: **ATN** (aminoglycosides, amphotericin, contrast) — **AIN** (β‑lactams, NSAIDs, PPIs) — **Crystals/obstruction** (acyclovir, methotrexate) — **Hemodynamic** (NSAIDs/ACEi/ARB في ظروف معينة).</div>
+        <div class="step">2) <b>Renal Dose Adjustment</b> — قاعدة: غالبًا **loading dose** لا يتغير، والتعديل يكون في **maintenance**. استخدم eGFR/CrCl، وخلي بالك: بعض الأدوية تُزال بالغسيل وتحتاج جرعة بعد الجلسة.</div>
+        <div class="step">3) <b>Dialysis Decision (AEIOU)</b> — لو في حماض شديد أو K⁺ عالي أو وذمة رئة أو أعراض يوريميا… ما تستناش أرقام الكرياتينين.</div>
+        <div class="step">4) <b>امتحان سريع</b> — أكثر سؤال يتكرر: “حدّد السبب + أول خطوة + هل يحتاج غسيل؟” … خليك ماشي بالـ flowchart.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon">📒</span> جدول المصطلحات (EN / AR / شرح مبسط)</h3>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:28%">English</th>
+            <th style="width:28%">العربي</th>
+            <th>شرح مبسط</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AKI</td><td>إصابة كلوية حادة</td><td>ارتفاع مفاجئ في الكرياتينين/نقص البول خلال أيام.</td></tr>
+          <tr><td>CKD</td><td>مرض كلوي مزمن</td><td>اضطراب مستمر >3 شهور (eGFR منخفض أو دلائل ضرر).</td></tr>
+          <tr><td>Nephrotoxins</td><td>أدوية/مواد مؤذية للكِلى</td><td>NSAIDs، aminoglycosides، contrast… خصوصًا مع الجفاف.</td></tr>
+          <tr><td>AEIOU</td><td>مؤشرات الغسيل العاجلة</td><td>Acidosis/Electrolytes/Intoxication/Overload/Uremia.</td></tr>
+          <tr><td>Dose adjustment</td><td>تعديل الجرعة</td><td>تقليل الجرعة أو زيادة الفاصل حسب eGFR/CrCl.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3><span class="icon i4">✅</span> ملحوظة استخدام</h3>
+      <p style="margin:0; color:var(--muted); font-weight:650">
+        هذا القالب مخصص لعمل <b>ملاحظات مذاكرة شخصية</b> (Personal Study Notes) بأسلوب iPharmEGY Capsules.
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="sig">iPharmEGY Academy <small>iPharmEGY Capsules — شروحات مبسطة</small></div>
+    <div class="pageno">Page 4 / 4</div>
+  </footer>
+</section>
+
+</body>
+</html>
