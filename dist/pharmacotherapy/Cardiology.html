@@ -1,445 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>iPharmEGY Academy | Cardiology Bundle (Mastaba Arabic)</title>
-<style>
-  :root {
-    --bg: #fbfbfd;
-    --card: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-    --brand: #0f766e;
-    --brand2: #1d4ed8;
-    --accent: #f97316;
-    --shadow: 0 10px 25px rgba(0,0,0,.07);
-    --radius: 16px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", "Cairo", sans-serif;
-    background: radial-gradient(1200px 600px at 10% 0%, rgba(29,78,216,.10), transparent 60%),
-                radial-gradient(900px 500px at 90% 10%, rgba(15,118,110,.10), transparent 55%),
-                radial-gradient(800px 500px at 50% 100%, rgba(249,115,22,.10), transparent 55%),
-                var(--bg);
-    color:var(--text);
-  }
-  a{color:inherit}
-  .wrap{max-width:980px; margin:0 auto; padding:18px 14px 86px;}
-  .brandbar{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:12px; padding:14px 16px; border-radius:var(--radius);
-    background: linear-gradient(135deg, rgba(15,118,110,.10), rgba(29,78,216,.10));
-    border: 1px solid rgba(0,0,0,.06);
-  }
-  .brand-left{display:flex; align-items:center; gap:10px}
-  .logo-badge{
-    width:44px; height:44px; border-radius:14px;
-    background: linear-gradient(135deg, var(--brand), var(--brand2));
-    box-shadow: var(--shadow);
-    display:grid; place-items:center; color:white; font-weight:800;
-  }
-  .brand-title{line-height:1.2}
-  .brand-title .name{font-size:16px; font-weight:800}
-  .brand-title .tag{font-size:12px; color:var(--muted)}
-
-  .chiprow{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-start}
-  .chip{font-size:12px; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.65); border:1px solid rgba(0,0,0,.06)}
-
-  /* Pages */
-  .page{
-    margin-top:14px;
-    padding:16px;
-    border-radius:var(--radius);
-    background: var(--card);
-    border: 1px solid rgba(0,0,0,.06);
-    box-shadow: var(--shadow);
-    position:relative;
-    overflow:hidden;
-  }
-  .page::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27400%27%20height%3D%27300%27%3E%0A%20%20%3Ctext%20x%3D%2720%27%20y%3D%27120%27%20font-family%3D%27Arial%27%20font-size%3D%2728%27%20fill%3D%27rgba%2820%2C20%2C20%2C0.08%29%27%3EiPharmEGY%20Academy%3C/text%3E%0A%20%20%3Ctext%20x%3D%2720%27%20y%3D%27165%27%20font-family%3D%27Arial%27%20font-size%3D%2716%27%20fill%3D%27rgba%2820%2C20%2C20%2C0.06%29%27%3EClinical%20Pharmacy%20Education%3C/text%3E%0A%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 420px 320px;
-    opacity:1;
-    pointer-events:none;
-  }
-  .page > *{position:relative; z-index:1}
-  .page-header{display:flex; align-items:center; gap:12px; margin-bottom:10px}
-  .icon{
-    width:44px; height:44px; border-radius:14px;
-    display:grid; place-items:center;
-    background: linear-gradient(135deg, rgba(15,118,110,.12), rgba(29,78,216,.12));
-    border: 1px solid rgba(0,0,0,.06);
-  }
-  .icon svg{fill: currentColor; color: var(--brand)}
-  .titles h2{margin:0; font-size:18px; font-weight:900}
-  .subtitle{font-size:12px; color:var(--muted); margin-top:3px; direction:ltr; text-align:right}
-
-  .grid{display:grid; grid-template-columns: 1fr; gap:12px}
-  @media (min-width: 860px) {
-    .grid{grid-template-columns: 1fr 1fr}
-  }
-  .card{
-    background: rgba(255,255,255,.72);
-    border:1px solid rgba(0,0,0,.06);
-    border-radius: 14px;
-    padding:12px 12px;
-  }
-  .card.accent{
-    background: linear-gradient(135deg, rgba(249,115,22,.10), rgba(15,118,110,.08));
-  }
-  .card h3{margin:0 0 10px; font-size:14px; font-weight:900}
-  .bullets{margin:0; padding:0 18px 0 0; line-height:1.75}
-  .bullets li{margin:6px 0}
-  .cover{
-    padding:18px;
-  }
-  .cover .hero{
-    display:grid; gap:10px;
-    padding:16px; border-radius:14px;
-    background: linear-gradient(135deg, rgba(15,118,110,.16), rgba(29,78,216,.16));
-    border:1px solid rgba(0,0,0,.06);
-  }
-  .cover h1{margin:0; font-size:20px; font-weight:1000}
-  .cover .meta{display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); font-size:12px}
-  .toc{margin-top:12px}
-  .toc h3{margin:0 0 8px; font-size:14px; font-weight:900}
-  .toc ul{margin:0; padding:0 18px 0 0; line-height:1.9}
-  .toc a{text-decoration:none; border-bottom:1px dashed rgba(0,0,0,.25)}
-
-  /* Glossary */
-  table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; background:rgba(255,255,255,.75); border:1px solid rgba(0,0,0,.06)}
-  th,td{padding:10px; border-bottom:1px solid rgba(0,0,0,.06); vertical-align:top; font-size:13px; line-height:1.6}
-  th{background:rgba(29,78,216,.08); font-weight:900}
-  tr:last-child td{border-bottom:none}
-  td.en{direction:ltr; text-align:left}
-
-  /* Bottom nav */
-  .nav{
-    position:fixed; left:0; right:0; bottom:0;
-    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(251,251,253,.85);
-    backdrop-filter: blur(10px);
-    border-top:1px solid rgba(0,0,0,.08);
-  }
-  .nav-inner{max-width:980px; margin:0 auto; display:flex; gap:10px; justify-content:space-between}
-  button{
-    border:none; border-radius:12px; padding:12px 14px;
-    font-weight:900; cursor:pointer;
-    background: linear-gradient(135deg, var(--brand), var(--brand2));
-    color:white; box-shadow: var(--shadow);
-    flex:1;
-  }
-  button.secondary{
-    background: rgba(17,24,39,.08);
-    color: var(--text);
-  }
-  button:active{transform: translateY(1px)}
-  .hint{font-size:12px; color:var(--muted); margin-top:10px}
-  @media print {
-    .nav, .hint {display:none !important}
-    body{background:white}
-    .wrap{padding:0}
-    .page{box-shadow:none; page-break-after:always}
-  }
-</style>
-</head>
-<body>
-  <div class="wrap">
-
-    <div class="brandbar">
-      <div class="brand-left">
-        <div class="logo-badge">A</div>
-        <div class="brand-title">
-          <div class="name">iPharmEGY Academy</div>
-          <div class="tag">Mastaba Arabic • Cardiology Bundle</div>
-        </div>
-      </div>
-      <div class="chiprow">
-        <div class="chip">Light Theme</div>
-        <div class="chip">Icons + Watermark</div>
-        <div class="chip">iOS Friendly</div>
-        <div class="chip">Print to PDF</div>
-      </div>
-    </div>
-
-    <section class="page cover" id="cover">
-      <div class="hero">
-        <h1>الكارديو بالمصطبة 😄 (مُكثّف + واضح)</h1>
-        <div class="meta">
-          <span>الحزمة: ADHF • Anticoag • AF • CHF • ACS • CSA • Dyslipidemia • HTN • Arrhythmias</span>
-          <span>—</span>
-          <span>آخر تحديث: 2026-02-04</span>
-        </div>
-      </div>
-
-      <div class="toc">
-        <h3>Table of Contents</h3>
-        <ul><li><a href='#adhf' data-jump='adhf'>ADHF</a></li>
-<li><a href='#anticoag' data-jump='anticoag'>Anticoagulation</a></li>
-<li><a href='#af' data-jump='af'>Atrial Fibrillation</a></li>
-<li><a href='#chf' data-jump='chf'>CHF</a></li>
-<li><a href='#acs' data-jump='acs'>ACS</a></li>
-<li><a href='#csa_dyslip' data-jump='csa_dyslip'>CSA &amp; Dyslipidemia</a></li>
-<li><a href='#htn' data-jump='htn'>HTN</a></li>
-<li><a href='#arrhythmias' data-jump='arrhythmias'>Arrhythmias</a></li>
-<li><a href='#glossary' data-jump='glossary'>Glossary</a></li></ul>
-      </div>
-
-      <div class="hint">ملاحظة: استخدم أزرار (التالي/السابق) تحت… أو اطبع PDF من زر الطباعة.</div>
-    </section>
-
-    
-<section class="page" id="adhf">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 21s-7-4.4-10-9.3C-1.1 6.9 2.1 3 6 3c2 0 3.5 1 4.5 2.2C11.5 4 13 3 15 3c3.9 0 7.1 3.9 4 8.7C19 16.6 12 21 12 21z"/></svg></div>
-    <div class="titles">
-      <h2>فشل قلبي حاد متفاقم (ADHF)</h2>
-      <div class="subtitle">Acute Decompensated Heart Failure (ADHF)</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Symptoms and signs of heart failure</li><li>Symptoms and signs of heart failureBackground about HF</li><li>Definition</li><li>Precipitating factors and Etiologies</li><li>Pathophysiology</li><li>Symptoms and signs of left sided and Right sided HF</li><li>Hemodynamic Values in Patients with ADHF and Sepsis</li><li>ADHF</li><li>Diagnosis</li><li>Management</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>الفكرة ببساطة: مريض فشل قلبي كان “متوازن” وبعدين فجأة حصل احتقان: ضيق نفس + وذمة + زيادة وزن.</li><li>أول سؤالين: هل فيه احتقان؟ وهل فيه نقص تروية/صدمة؟ (Warm/Cool + Wet/Dry).</li><li>أهم خطوات الطوارئ: أكسجين عند اللزوم، وضعية جلوس، قياس ضغط/نبض/تشبع، ECG، وظائف كُلى وإلكتروليتات.</li><li>العلاج غالبًا: مُدرّات (Loop diuretics) + تقليل الملح/السوائل؛ لو الضغط عالي قد نضيف موسعات (Nitrates).</li><li>راجع الأسباب المُحرّكة: عدوى، عدم التزام بالدواء/الملح، رجفان أذيني سريع، احتشاء، فشل كلوي…</li><li>مؤشرات خطورة تستدعي عناية: هبوط ضغط، قلة بول، لاكتات عالي، تشبع سيء، تدهور سريع.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="anticoag">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M10 3a7 7 0 0 0 0 14h4a7 7 0 1 0 0-14h-4zm0 2h4a5 5 0 0 1 0 10h-4a5 5 0 0 1 0-10z"/><path d="M8.5 8.5l7 7"/></svg></div>
-    <div class="titles">
-      <h2>مضادات التجلّط (Anticoagulation)</h2>
-      <div class="subtitle">Anticoagulation</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Introduction</li><li>Anticoagulation in AF</li><li>Types of Anticoagulants</li><li>Warfarin vs DOACs</li><li>Anticoagulation in valvular heart disease</li><li>Prevention of venous thromboembolism in orthopedic</li><li>surgery</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>ليه بنستخدمها؟ منع جلطات الوريد (DVT/PE) أو منع جلطة مخ (AF) أو بعد صمامات صناعية.</li><li>القاعدة الذهبية: نُوازن بين “منع الجلطة” و“خطر النزيف”.</li><li>Warfarin يحتاج INR متابعة وتداخلات أكل/أدوية كتير؛ مناسب للصمامات الميكانيكية.</li><li>DOACs (زي apixaban/rivaroxaban) أسهل عادة، لكن راقب الكُلى والالتزام والجرعات.</li><li>قبل البدء: قيّم CBC/كُلى/كبد + تاريخ نزيف + أدوية تزوّد النزيف (NSAIDs).</li><li>لو نزيف: أوقف الدواء، عالج السبب، واعتبر العكس المناسب (Vitamin K/Prothrombin complex أو antidote حسب النوع).</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="af">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="titles">
-      <h2>الرجفان الأُذيني (AF)</h2>
-      <div class="subtitle">Atrial Fibrillation (AF)</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>محاور المحاضرة داخل الملف الأصلي (تم تلخيص أهم النقاط أدناه).</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>المشكلة: الأذين “بيترفرف” بدل ما ينقبض → نبض غير منتظم + خطر جلطة مخ.</li><li>التقييم السريع: استقرار المريض؟ لو غير مستقر → تقويم كهربائي عاجل.</li><li>في المستقر: هدفين: ضبط المعدل (Rate control) أو ضبط النظم (Rhythm control) حسب الحالة.</li><li>أدوية شائعة لضبط المعدل: beta‑blocker أو diltiazem/ verapamil (بحذر في فشل قلبي).</li><li>قرار مضاد التجلّط يعتمد على CHA₂DS₂‑VASc + تقييم نزيف (HAS‑BLED) وتفضيل المريض.</li><li>أسباب لازم تتشاف: فرط/قصور الغدة، عدوى، كحول، نقص بوتاسيوم/مغنيسيوم، فشل قلبي.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="chf">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 21s-7-4.4-10-9.3C-1.1 6.9 2.1 3 6 3c2 0 3.5 1 4.5 2.2C11.5 4 13 3 15 3c3.9 0 7.1 3.9 4 8.7C19 16.6 12 21 12 21z"/></svg></div>
-    <div class="titles">
-      <h2>فشل القلب المزمن (CHF)</h2>
-      <div class="subtitle">Chronic Heart Failure (CHF)</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Symptoms and signs of heart failure</li><li>Symptoms and signs of heart failureChronic HF</li><li>vSystolic and diastolic HF overview</li><li>v1ry symptoms</li><li>vClassification of HF</li><li>vPathophysiology and Compensatory</li><li>mechanisms of HF</li><li>vManagement</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>الفكرة: القلب ضعيف في الضخ (HFrEF) أو صلب في الامتلاء (HFpEF).</li><li>علامات الاحتقان: ضيق نفس عند المجهود/عند النوم، تورم رجلين، كحة ليلية، زيادة وزن.</li><li>هدفنا: نِقلل الأعراض + نطوّل العمر + نمنع الدخول المتكرر للمستشفى.</li><li>HFrEF أساسه: ARNI/ACEi/ARB + Beta‑blocker + MRA + SGLT2 inhibitor (حسب الحالة).</li><li>المدرات للأعراض (المياه والملح) لكنها ليست وحدها علاج بقاء.</li><li>نصايح مصطبة: وزن يومي، ملح قليل، لقاحات، التزام علاج، راقب كُلى/بوتاسيوم.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="acs">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 7h16v10H4z"/><path d="M7 7v10M10 7v10M13 7v10M16 7v10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-    <div class="titles">
-      <h2>متلازمة الشريان التاجي الحادة (ACS)</h2>
-      <div class="subtitle">Acute Coronary Syndrome (ACS)</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Symptoms and signs of heart failure</li><li>Symptoms and signs of heart failureAcute coronary diseases</li><li>Coronary Artery Disease (CAD)</li><li>Chronic Stable</li><li>Angina</li><li>(Chronic CAD) Acute Coronary Syndrome (ACS)</li><li>Unstable Angina Non -STEMI STEMI</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>أي ألم صدر جديد/شديد = تعامل سريع: ECG خلال 10 دقائق + Troponin.</li><li>فرّق بسرعة: STEMI vs NSTEMI/Unstable angina لأن العلاج العاجل يختلف.</li><li>العلاج المبدئي غالبًا: Aspirin + P2Y12 inhibitor + Anticoagulant + Statin عالي الجرعة.</li><li>نترات للألم لو الضغط مناسب، وأكسجين فقط لو التشبع منخفض.</li><li>لو STEMI: أولوية فتح الشريان (PCI) بأسرع وقت، أو تحلل جلطة إذا غير متاح.</li><li>تحذير: انتبه للنزيف خصوصًا مع علاج مزدوج مضاد صفائح.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="csa_dyslip">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M4 7h16v10H4z"/><path d="M7 7v10M10 7v10M13 7v10M16 7v10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
-    <div class="titles">
-      <h2>ذبحة صدرية مستقرة + اضطراب دهون</h2>
-      <div class="subtitle">Chronic Stable Angina (CSA) & Dyslipidemia</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Symptoms and signs of heart failure</li><li>Symptoms and signs of heart failureChronic Stable Angina</li><li>Dyslipidemia</li><li>Coronary Artery Disease (CAD)</li><li>Chronic Stable</li><li>Angina</li><li>(Chronic CAD) Acute Coronary Syndrome (ACS)</li><li>Unstable Angina Non -STEMI STEMI</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>CSA = ألم صدر مع المجهود ويهدأ بالراحة/النترات: الهدف تقليل الأعراض ومنع أحداث قلبية.</li><li>للأعراض: beta‑blocker أولًا، ثم CCB/نترات طويلة؛ وRanolozine خيار لبعض المرضى.</li><li>للوقاية: Statin قوي + التحكم في ضغط/سكر/تدخين + Aspirin حسب المخاطر.</li><li>الدهون: ابدأ Statin عالي الشدة لو ASCVD؛ وراقب LDL وهدفك نزوله بقوة.</li><li>لو LDL ما نزلش: أضف ezetimibe ثم PCSK9 عند الحاجة.</li><li>مصطبة: “الدهون ما بتوجعش”… بس بتسد الشرايين؛ الالتزام أهم من أي حاجة.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="htn">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v5a7 7 0 0 0 14 0V9a7 7 0 0 0-7-7zm0 2a5 5 0 0 1 5 5v5a5 5 0 0 1-10 0V9a5 5 0 0 1 5-5z"/><path d="M12 7v5l3 2"/></svg></div>
-    <div class="titles">
-      <h2>ارتفاع ضغط الدم (HTN)</h2>
-      <div class="subtitle">Hypertension (HTN)</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Symptoms and signs of heart failure</li><li>Symptoms and signs of heart failure1.Hypertensive crisis</li><li>Chronic hypertension</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>التشخيص الصح: قياسات متعددة + جهاز مضبوط + راحة 5 دقائق قبل القياس.</li><li>الأهداف تختلف حسب العمر/السكري/الكُلى، لكن الأهم: نزول تدريجي وآمن.</li><li>خط أول غالبًا: ACEi/ARB أو CCB أو Thiazide‑like (اختيار حسب المريض).</li><li>لو ضغط شديد مع أعراض/أعضاء: Hypertensive emergency → علاج وريدّي داخل مستشفى.</li><li>نمط حياة: ملح أقل، وزن أقل، مشي، تقليل كافيين، إيقاف تدخين.</li><li>مصطبة: الدواء يشتغل لما تاخده يوميًا… مش لما “تحس” إن الضغط عالي.</li></ul>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="arrhythmias">
-  <header class="page-header">
-    <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="titles">
-      <h2>اضطرابات النَظْم (Arrhythmias)</h2>
-      <div class="subtitle">Arrhythmias</div>
-    </div>
-  </header>
-
-  <div class="grid">
-    <div class="card">
-      <h3>محاور سريعة</h3>
-      <ul class="bullets"><li>Arrhythmia Classification</li><li>Check list before arrythmias diagnosis</li><li>Drugs indicated for arrhythmia</li><li>Bradycardia & tachycardia treatment</li><li>Adult Cardiac Arrest & Implantable Cardioverter Defibrillators (ICD)</li></ul>
-    </div>
-    <div class="card accent">
-      <h3>ملخص مصطبة (فاهم وبسيط)</h3>
-      <ul class="bullets"><li>ابدأ دائمًا: هل المريض مستقر؟ (ضغط، وعي، ألم صدر، فشل تنفس) لو لا → صعق/إنعاش حسب البروتوكول.</li><li>اقرأ ECG ببساطة: معدل؟ منتظم؟ QRS ضيق ولا واسع؟</li><li>SVT غالبًا QRS ضيق ومنتظم: جرّب vagal maneuvers ثم adenosine (لو مناسب).</li><li>VT (واسع) خطر: قد يحتاج cardioversion/Amiodarone حسب الاستقرار.</li><li>براديكارديا مع أعراض: أتروبين ثم pacing لو لزم.</li><li>صحّح أسباب كتير بتعمل لخبطة: بوتاسيوم/مغنيسيوم، أدوية تُطوّل QT، نقص أكسجين.</li></ul>
-    </div>
-  </div>
-</section>
-
-
-    <section class="page" id="glossary">
-      <header class="page-header">
-        <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M10 3a7 7 0 0 0 0 14h4a7 7 0 1 0 0-14h-4zm0 2h4a5 5 0 0 1 0 10h-4a5 5 0 0 1 0-10z"/><path d="M8.5 8.5l7 7"/></svg></div>
-        <div class="titles">
-          <h2>جدول المصطلحات</h2>
-          <div class="subtitle">English • Arabic • Mastaba Explanation</div>
-        </div>
-      </header>
-
-      <div class="card">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:34%">English Term</th>
-              <th style="width:26%">العربي</th>
-              <th>شرح مصطبة</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class='en'>Acute Coronary Syndrome (ACS)</td><td>متلازمة الشريان التاجي الحادة</td><td>ألم صدر/جلطة تاجية: بنجري بسرعة ECG وتروبونين ونفتح الشريان.</td></tr>
-<tr><td class='en'>STEMI</td><td>جلطة مع ارتفاع ST</td><td>الأولوية فتح الشريان فورًا (PCI) أو إذابة جلطة عند عدم التوفر.</td></tr>
-<tr><td class='en'>NSTEMI</td><td>جلطة بدون ارتفاع ST</td><td>تروبونين عالي لكن ECG مختلف؛ علاج دوائي + قسطرة حسب الخطورة.</td></tr>
-<tr><td class='en'>Heart Failure (HF)</td><td>فشل القلب</td><td>القلب مش قادر يضخ/يمتلئ صح → احتقان وضيق نفس وتورم.</td></tr>
-<tr><td class='en'>ADHF</td><td>تفاقم حاد لفشل القلب</td><td>نفس المريض بتسوء فجأة بسبب احتقان أو سبب محرّك زي عدوى/عدم التزام.</td></tr>
-<tr><td class='en'>HFrEF</td><td>فشل قلب مع كسر قذف منخفض</td><td>علاج بقاء: ARNI/ACEi/ARB + BB + MRA + SGLT2.</td></tr>
-<tr><td class='en'>Atrial Fibrillation (AF)</td><td>رجفان أُذيني</td><td>نبض غير منتظم + خطر جلطة مخ؛ قرار مضاد التجلط حسب CHA2DS2‑VASc.</td></tr>
-<tr><td class='en'>CHA2DS2‑VASc</td><td>مقياس خطر جلطة</td><td>يساعدنا نقرر هل ندي مضاد تجلط ولا لأ.</td></tr>
-<tr><td class='en'>Warfarin</td><td>وارفارين</td><td>مضاد تجلط يحتاج INR وتداخلات أكل/أدوية؛ مهم للصمامات الميكانيكية.</td></tr>
-<tr><td class='en'>INR</td><td>نسبة سيولة للوارفارين</td><td>رقم بنقيسه عشان نعرف الجرعة مظبوطة ولا خطر نزيف/جلطة.</td></tr>
-<tr><td class='en'>DOACs</td><td>مضادات تجلط حديثة</td><td>أسهل من وارفارين عادة؛ راقب الكُلى والالتزام.</td></tr>
-<tr><td class='en'>Hypertension (HTN)</td><td>ارتفاع ضغط الدم</td><td>مزمن غالبًا بلا أعراض؛ علاجه يقلل جلطات ومضاعفات كُلى وقلب.</td></tr>
-<tr><td class='en'>SVT</td><td>تسرّع فوق بطيني</td><td>نبض سريع غالبًا منتظم وQRS ضيق؛ vagal ثم adenosine لو مناسب.</td></tr>
-<tr><td class='en'>VT</td><td>تسرّع بطيني</td><td>خطر وقد يسبب توقف قلب؛ العلاج حسب الاستقرار (صعق/أميودارون).</td></tr>
-<tr><td class='en'>Dyslipidemia</td><td>اضطراب دهون</td><td>LDL عالي يزود التصلب؛ statin أساس الوقاية.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="hint">© iPharmEGY Academy — للتعلم والمراجعة السريعة. المحتوى ملخّص تعليمي وليس بديلًا عن رأي طبي.</div>
-    </section>
-
-  </div>
-
-  <div class="nav">
-    <div class="nav-inner">
-      <button class="secondary" id="prevBtn">السابق</button>
-      <button class="secondary" id="printBtn">طباعة PDF</button>
-      <button id="nextBtn">التالي</button>
-    </div>
-  </div>
-
-<script>
-(function(){
-  const ids = ["cover","adhf","anticoag","af","chf","acs","csa_dyslip","htn","arrhythmias","glossary"];
-  function currentIndex(){
-    const hash = (location.hash || "#cover").replace("#","");
-    const idx = ids.indexOf(hash);
-    return idx >= 0 ? idx : 0;
-  }
-  function go(idx){
-    const clamped = Math.max(0, Math.min(ids.length-1, idx));
-    location.hash = "#" + ids[clamped];
-  }
-  document.getElementById("nextBtn").addEventListener("click", ()=>go(currentIndex()+1));
-  document.getElementById("prevBtn").addEventListener("click", ()=>go(currentIndex()-1));
-  document.getElementById("printBtn").addEventListener("click", ()=>window.print());
-
-  // TOC jump
-  document.querySelectorAll("[data-jump]").forEach(a=>{
-    a.addEventListener("click", (e)=>{
-      e.preventDefault();
-      const id = a.getAttribute("data-jump");
-      location.hash = "#" + id;
-    });
-  });
-})();
-</script>
-</body>
-</html>
